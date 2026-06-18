@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2><hr>
+    <form>
+
+        <label>Full Name:</label><br>
+        <input type="text"placeholder="name"><br>
+
+        <label>Email:</label><br>
+        <input type="email" placeholder="email"><br>
+
+        <label>Password:</label><br>
+        <input type="password" placeholder="password"><br>
+
+        <label>Mobile Number:</label><br>
+        <input type="tel" placeholder="mobile"><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" name="dob"><br><hr>
+
+        <h2>Gender:</h2>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br><hr>
+        <h2>City:</h2>
+        <select name="city">
+            <option value="">Select City</option>
+            <option>Pune</option>
+            <option>Mumbai</option>
+            <option>Solapur</option>
+            <option>Nagpur</option>
+            <option>Kolhapur</option>
+        </select>
+        <br><hr>
+        <h2>Skills:</h2>
+        <input type="checkbox" name="skills"> html
+        <input type="checkbox" name="skills">css
+        <input type="checkbox" name="skills" > JavaScript
+        <input type="checkbox" name="skills" > Python
+        <br><hr>
+        <h2>Profile Picture Upload:</h2>
+        <input type="file" name="profilepic">
+        <br><br><hr>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</body>
+</html>
