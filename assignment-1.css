@@ -1,0 +1,10 @@
+div{
+    display: flex;
+    background-color: #12d6d3;
+    justify-content: center;
+}
+div1{
+    display: flex;
+    justify-content: center;
+
+}
