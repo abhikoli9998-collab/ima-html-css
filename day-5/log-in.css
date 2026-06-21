@@ -1,0 +1,12 @@
+body{background-color: rgb(3, 3, 3);
+    text-align:center;
+    font-style: italic;
+}
+fieldset{
+    text-size-adjust: 10;
+    color: aliceblue;
+}
+h2{
+ text-size-adjust: 10;
+    color: aliceblue;   
+}
