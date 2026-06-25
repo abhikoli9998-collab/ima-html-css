@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Card</title>
+<style>
+       *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+        }
+        body{
+        background:linear-gradient(135deg, #4facfe, #00f2fe);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+       height:100vh;
+    }
+        
+    .card{
+        width:350px;
+        background:#fff;
+        border-radius:20px;
+        text-align:center;
+        padding:25px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+    .img{
+        width:120px;
+        height:120px;
+        border-radius:50%;
+        border:4px solid #4facfe;
+        object-fit:cover;
+        margin-bottom:15px;
+    }
+
+    h2{
+        color:#333;
+        margin-bottom:10px;
+    }
+    .education{
+        color:#666;
+        font-size:18px;
+        margin-bottom:15px;
+    }
+
+    .abhi{
+        margin:15px 0;
+        color:#555;
+        margin-top: 10pxx;
+
+    }
+    
+    .button{
+        display:inline-block;
+        margin-top:10px;
+        padding:10px 20px;
+        background:#4facfe;
+        color:white;
+        text-decoration:none;
+        border-radius:25px;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzu0zxBLjQgLxMmTDIzkrET_UvkN9B4JUt3mQyQYxNnDnjcitQhEDyLUIE&s=10" alt="Profile Photo" class="img">
+
+    <h2>Abhishek Koli</h2>
+    <p class="education">BCA Pursuing</p>
+
+    <div class="abhi">
+        <p><strong>Student</strong></p>
+        <br>
+        <p>Learning Web Development</p>
+        <br>
+        <p>Email:abhikoli4897@gmail.com</p>
+    </div>
+
+    <a href="#" class="button">View Profile</a>
+</div>
+
+</body>
+</html>
