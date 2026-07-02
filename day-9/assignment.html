@@ -4,39 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
+    <title>id card</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
+            margin: 10px;
+            border-radius: 40px;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: linear-gradient(135deg, #3081c7, #8f9fa0);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        .card {
+        .id {
             width: 350px;
-            background: #fff;
-            border-radius: 20px;
+            background: #c6ecba;
+            border: solid black;
             text-align: center;
             padding: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2)
         }
 
         .img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #4facfe;
-            object-fit: cover;
-            margin-bottom: 15px;
+            border-radius: 0%;
+            border: 4px solid #301f5b;
         }
 
         h2 {
@@ -44,7 +40,7 @@
             margin-bottom: 10px;
         }
 
-        .education {
+        .college {
             color: #666;
             font-size: 18px;
             margin-bottom: 15px;
@@ -53,40 +49,35 @@
         .abhi {
             margin: 15px 0;
             color: #555;
-            margin-top: 10pxx;
-
+            margin-top: 10px;
         }
-
         .button {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background: #4facfe;
+            background: #d7205a;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 0px;
         }
     </style>
 </head>
 
 <body>
+    <div class="id">
+        <img width="150" height="100"
+            src="https://static.wikia.nocookie.net/naruto/images/d/dd/Naruto_Uzumaki%21%21.png/revision/latest?cb=20161013233552"
+            class="img">
+        <h1>Abhishek Koli</h1>
 
-    <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzu0zxBLjQgLxMmTDIzkrET_UvkN9B4JUt3mQyQYxNnDnjcitQhEDyLUIE&s=10"
-            alt="Profile Photo" class="img">
-
-        <h2>Abhishek Koli</h2>
-        <p class="education">BCA Pursuing  </p>
-
+        <p class="college">BCA Pursuing</p>
         <div class="abhi">
             <p><strong>Student</strong></p>
-            <br>
-            <p>Learning Web Development</p>
-            <br>
-            <p>abhikoli4897@gmail.com</p>
-        </div>
+            <p>Full stack Development</p>
+            <p>2216</p>
 
-        <a href="#" class="button">View Profile</a>
+        </div>
+        <a href="#" class="button">View ID Crad</a>
     </div>
 
 </body>

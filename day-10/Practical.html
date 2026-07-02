@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical</title>
+</head>
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid black;
+    }
+
+    .menu {
+        display: flex;
+        gap: 20px;
+        text-align: left;
+    }
+
+    a {
+        text-decoration: none;
+        text-align: left;
+        justify-self: end;
+    }
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        width: 200px;
+        border: 1px solid black;
+        padding: 20px;
+        z-index: 1;
+    }
+
+</style>
+
+<body>
+    <nav>
+        <div class="logo"><img height="100px" width="250px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4R5-Zl6vY2ifvdl3zdBe69vSUUyBb7eGeiaxTr5d9Eg&s=10"></div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Contact</a>
+        </div>
+        <br>
+    </nav>
+    <div class="products">
+        <div class="card">Product 1</div>
+        <div class="card">Product 2</div>
+        <div class="card">Product 3</div>
+        <div class="card">Product 4</div>
+    </div>
+
+</body>
+
+</html>
