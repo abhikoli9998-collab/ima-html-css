@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-between;
         align-items: end;
-        padding: 20px;
+        padding: 10px;
         border-bottom: 5px solid black;
     }
     h1{
@@ -36,12 +36,14 @@
     }
 
     .card {
-        margin: 40px;
-        width: 250px;
-        height: 400px;
+        margin: 20px;
+        padding: auto;
+        width: 200px;
+        height: 300px;
         border: 5px solid black;
         padding: 20px;
         background-color: white;
+        flex-wrap: wrap;
     }
 
     .button {
@@ -65,7 +67,15 @@
         border-radius: 25px;
         font-size: 15px;
     }
-
+    @media (max-width: 768px) {
+        h1{
+            color: blue;
+        }
+        .card{
+            flex-wrap: wrap;
+            margin: 25px;
+        }
+      }
 </style>
 
 <body>
@@ -82,15 +92,7 @@
             <a href="#">Contact</a>
         </div>
     </nav>
-    <div class="products">
-        <div class="card"> <img height="60%" width="70%"
-                src="https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/iphone-17-pro-17-pro-max-hero.png">
-                <h3>iPhone 17 Pro Max</h3>
-            <p>Embed an official iPhone 17 Pro Max
-                2007
-            </p>
-            <button class="button">buy now </button>
-        </div>
+   
         <div class="card">
             <img height="60%" width="70%"
                 src="https://5.imimg.com/data5/SELLER/Default/2024/2/388363936/ZE/WJ/CI/191216780/apple-ipad-air-64gb-only-wifi.jpg">
