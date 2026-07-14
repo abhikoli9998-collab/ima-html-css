@@ -37,14 +37,14 @@
             align-items: center;
         }
 
-        a{
+        a {
             color: rgb(1, 1, 1);
             padding: 5px;
 
         }
 
         #home {
-            justify-content: space-between;
+            justify-content: space-around;
             display: flex;
             padding: 60px;
             align-items: center;
@@ -54,14 +54,19 @@
             color: rgb(246, 243, 243);
             background-color: rgb(83, 30, 67);
         }
-        .links{
+
+        .links {
             border-bottom: 3px solid black;
             color: aliceblue;
         }
+
         .full {
             border: 2px solid black;
             border-radius: 20px;
             justify-content: center;
+        }
+        .photo{
+            border: 2px solid white;
         }
 
         .img {
@@ -71,19 +76,39 @@
 
         }
 
+        #about .p {
+            width: 90%;
+            margin: 20px auto;
+            line-height: 1.7;
+            text-align: center;
+        }
+        #project .p {
+            width: 90%;
+            margin: 20px auto;
+            line-height: 1.7;
+            text-align: center;
+        }
+        #education .p {
+            width: 90%;
+            margin: 20px auto;
+            line-height: 1.7;
+            text-align: center;
+        }
         #about {
             box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.3);
             margin: 20px;
             border-radius: 50px;
             color: aliceblue;
             border: 2px solid black;
-            padding-top: 50px;
+            text-align: center;
+            width: 454%;
             font-size: 20px;
             font-weight: bold;
             background-color: rgb(83, 30, 67);
         }
 
         #project {
+            width: 500%;
             color: aliceblue;
             margin: 20px;
             border: 2px solid black;
@@ -95,8 +120,6 @@
         }
 
         #skills {
-
-
             background-color: rgb(83, 30, 67);
             color: aliceblue;
             height: 35%;
@@ -105,7 +128,7 @@
 
         .div {
             display: flex;
-            justify-content: space-around;
+            width: 100% justify-content: space-around;
             background-color: rgb(83, 30, 67);
         }
 
@@ -162,6 +185,7 @@
         <div class="img1">
             <div class="container">
                 <header class="header">
+                    <br>
                     <h2> Hello I'm Abhishek Koli</h2>
                     <p>Full Stack Developer</p>
                 </header>
@@ -172,7 +196,6 @@
                     <a href="#project">Project</a>
                     <a href="#education">Education</a>
                     <a href="#contact">Contact</a>
-                    <a href="#links">Social Media Links</a>
                     <a href="#footer">Footer</a>
                 </nav>
                 <br>
@@ -182,25 +205,29 @@
             <section id="home">
                 <h2>Hello I'm Abhishek Koli
                     <br><br>I'm a full stack developer
-                    <br><br><a class="links" href="https://www.linkedin.com/in/abhishek-koli-123456789/" target="_blank">LinkedIn</a>
-                    <a class="links" href="https://github.com/abhishek-koli" target="_blank">GitHub</a>
+                    <br><br><a class="links" href="https://www.linkedin.com/in/abhishek-koli-3901a5419/"
+                        target="_blank">LinkedIn</a>
+                    <a class="links" href="https://github.com/abhikoli9998-collab" target="_blank">GitHub</a>
                 </h2>
-                <img class="full" width="850" height="500" src="../full stack developer.png">
+                <img class="full" width="450" height="500" src="../itsme.jpeg">
             </section>
             <div class="div">
                 <section id="about">
+                    <br>
                     <h2>About Me</h2>
                     <br>
-                    <img width="160px" height="200px" src="../my-img.jpeg">
+                    <img class="photo" width="160px" height="200px" src="../my-img.jpeg">
+                    <br>
+                    <br>
                     <p>MY NAME : abhishek koli</p>
+                    <br>
                     <p>CONTACT ME : 9130872258</p>
+                    <br>
                     <p>EMAIL : abhikoli4897@gmail.com</p>
                     <br>
-                    <p>I am a passionate full stack developer with experience in building web applications <br>using
-                        MongoDB, Express.js, React.js, and Node.js.I enjoy
-                        <br> solving complex problems and continuously learning new technologies<br>
-                        to enhance my skills.
-                    </p>
+                    <p class="p">I am a passionate full stack developer with experience in building web applications
+                        using MongoDB, Express.js, React.js, and Node.js.I enjoy solving complex problems and
+                        continuously learning new technologies to enhance my skills.</p>
                 </section>
                 <section id="project">
                     <br>
@@ -211,17 +238,13 @@
                     <h3>Apple india</h3>
                     <br>
                     <img width="100" height="100" src="../apple data.png" alt="Apple india">
-                    <p>Apple india is a web-based application that showcases the products and services of Apple in the
-                        Indian market,
-                        <br>including product browsing, shopping cart, and user-friendly navigation. It is developed
-                        using <br>
-                        HTML, CSS, JavaScript, and modern web technologies to provide an online shopping experience.
+                    <p class="p">Apple india is a web-based application that showcases the products and services of Apple in the Indian market, including product browsing, shopping cart, and user-friendly navigation. It is developed using HTML, CSS, JavaScript, and modern web technologies to provide an online shopping experience.
                     </p>
                     <br>
                     <h3>instagram log-in page</h3>
                     <br>
                     <img width="100" height="100" src="../loh-in-page-instgram.png" alt="log-in page">
-                    <p>This project helps beginners learn form design, CSS styling,
+                    <p class="p">This project helps beginners learn form design, CSS styling,
                         <br>responsive layouts, and modern UI development techniques
                     </p>
                     <br>
@@ -229,6 +252,7 @@
             </div>
             <div class="ec">
                 <section id="education">
+                    <br>
                     <h2>Education</h2>
                     <br>
                     <table border="1" style="width: 100%; border-collapse: collapse;">
@@ -257,13 +281,14 @@
                             </tr>
                     </table>
                     <br>
-                    <p>I have pursuing my Bachelor's degree in Science from punyashlok Ahila devi holkar University,
+                    <p class="p">I have pursuing my Bachelor's degree in Science from punyashlok Ahila devi holkar University,
                         solpaur
                         where I gained a strong foundation in programming, algorithms, and software development
                         principles.
                     </p><br>
                 </section>
                 <section id="contact">
+                    <br>
                     <h2>Contact Me</h2>
                     <br>
                     <form>
@@ -280,6 +305,9 @@
                 <br>
             </div>
             <section id="skills">
+                <br>
+
+                <hr>
                 <h1>Skills</h1>
                 <hr>
                 <br>
@@ -298,8 +326,8 @@
             </section>
             <footer id="footer">
                 <p>&copy; 2026 Abhishek Koli. All rights reserved.</p>
-                <a href="https://www.linkedin.com/in/abhishek-koli-123456789/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/abhishek-koli" target="_blank">GitHub</a>
+                <a href="https://https://www.linkedin.com/in/abhishek-koli-3901a5419/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/abhikoli9998-collab" target="_blank">GitHub</a>
             </footer>
         </div>
 </body>

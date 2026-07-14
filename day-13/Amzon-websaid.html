@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: "Lato", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #screenCnt {
+        /* border: 5px solid red; */
+        /* height: 100vh; */
+      }
+      #navbarCnt {
+        border: 2px solid black;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: #000000;
+        color: white;
+      }
+      #logoCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+      }
+      #searchCnt {
+        /* border: 2px solid blue; */
+        width: 50%;
+        height: 74%;
+        display: flex;
+      }
+      #profileCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+      #profileCnt img {
+        width: 12%;
+      }
+      .imgStyle {
+        height: 100%;
+        width: 44%;
+      }
+      #catCnt {
+        /* border: 2px solid yellow; */
+        width: 8%;
+      }
+      #catCnt select {
+        background-color: #e6e6e6;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border: none;
+      }
+      #seaCnt {
+        /* border: 2px solid yellow; */
+        width: 80%;
+      }
+      #seaCnt input {
+        padding-left: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+      }
+      #subCnt {
+        width: 8%;
+        background-color: #febd6a;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #subCnt span {
+        color: black;
+      }
+      .wh-100 {
+        width: 100%;
+        height: 100%;
+      }
+      #naviCnt {
+        height: 40px;
+        background-color: #242f3e;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      #naviCnt p {
+        font-size: 14px;
+      }
+      #bodyCnt {
+        /* border: 2px solid blue; */
+        background-color: #e3e6e6;
+      }
+      #sliderCnt {
+        /* border: 5px solid green; */
+        height: calc(100vh - 126px);
+        background-image: url("https://images-eu.ssl-images-amazon.com/images/G/31/img22/CEPC/PD26/Changes/MED_Hero_3000x1200_y._CB758752382_.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-clip: border-box;
+        background-color: #e3e6e6;
+      }
+      #addsCnt {
+        width: 96%;
+        margin: auto;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: flex-end;
+      }
+      .adds {
+        width: 24%;
+        /* border: 2px solid black; */
+        height: 400px;
+        background-color: white;
+        padding: 20px;
+      }
+      #addsImgCnt {
+        /* border : 2px  solid black; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+      #addsImgCnt div {
+        width: 45%;
+        height: 150px;
+      }
+      #addsImgCnt div img {
+        height: 80%;
+        width: 100%;
+      }
+
+      #addsImgCnt div p {
+        font-size: 12px;
+      }
+      @media (max-width: 600px) {
+        #searchCnt {
+          display: none;
+        }
+        #logoCnt {
+          width: 30%;
+        }
+        .imgStyle {
+          width: 100%;
+        }
+
+        #profileCnt img {
+          width: 48%;
+        }
+
+        #navbarCnt {
+          justify-content: space-between;
+        }
+        .hideOnMob {
+          display: none;
+        }
+        #sliderCnt {
+          height: calc(52vh);
+          background-size: contain;
+          background-clip: border-box;
+        }
+        .adds {
+          width: 90%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="screenCnt">
+      <div id="navbarCnt">
+        <div id="logoCnt">
+          <img
+            class="imgStyle"
+            src="https://www.thesun.co.uk/wp-content/uploads/2022/02/Amazon-Logo-1024x426-1.png?strip=all&w=960"
+          />
+        </div>
+        <div id="searchCnt">
+          <div id="catCnt">
+            <select class="wh-100">
+              <option>All</option>
+              <option>All</option>
+              <option>All</option>
+              <option>All</option>
+            </select>
+          </div>
+          <div id="seaCnt">
+            <input class="wh-100" placeholder="Search Amazon.in" />
+          </div>
+          <div id="subCnt">
+            <span class="material-symbols-outlined"> search </span>
+          </div>
+        </div>
+        <div id="profileCnt">
+          <img src="./profile.svg" />
+          <img src="./cart.svg" />
+        </div>
+      </div>
+      <div id="naviCnt">
+        <p>All</p>
+        <p>Fresh</p>
+        <p>Mx Player</p>
+        <p>Sell</p>
+        <p>Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+        <p class="hideOnMob">All</p>
+        <p class="hideOnMob">Fresh</p>
+        <p class="hideOnMob">Mx Player</p>
+        <p class="hideOnMob">Sell</p>
+        <p class="hideOnMob">Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+      </div>
+      <div id="bodyCnt">
+        <div id="sliderCnt">
+          <div id="addsCnt">
+            <div class="adds">
+              <h3>Continue shopping deals</h3>
+              <div id="addsImgCnt">
+                <div>
+                  <img
+                    src="https://m.media-amazon.com/images/I/41oZOdnrdIL._AC_SY145_.jpg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://m.media-amazon.com/images/I/61+q1MKUjpL._AC_SY145_.jpg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://m.media-amazon.com/images/I/51mVon5oCYL._AC_SY145_.jpg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://m.media-amazon.com/images/I/51jcu7LAPRL._AC_SY145_.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="adds hideOnMob">
+              <h3>Appliances for your home | Up to 55% off</h3>
+              <div id="addsImgCnt">
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08RDL6H79._SY116_CB667322346_.jpg"
+                  />
+                  <p>Air conditioners</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B08345R1ZW._SY116_CB667322346_.jpg "
+                  />
+                  <p>Refrigerators</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/Appliances-QC-PC-186x116--B07G5J5FYP._SY116_CB667322346_.jpg"
+                  />
+                  <p>Microwaves</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/GATEWAY/MSO/186x116---wm._SY116_CB667322346_.jpg"
+                  />
+                  <p>washing machines</p>
+                </div>
+              </div>
+            </div>
+            <div class="adds hideOnMob">
+              <h3>Revamp your home in style</h3>
+              <div id="addsImgCnt">
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_furnishings_2._SY116_CB555624324_.jpg"
+                  />
+                  <p>Cushion covers, bedsheets & more</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_decor_1._SY116_CB555624324_.jpg"
+                  />
+                  <p>Figurines, vases & more</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_storage_1._SY116_CB555624324_.jpg"
+                  />
+                  <p>Home storage</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2024/Gateway/BTFGW/PCQC/New/1x/final/186x116_Home_lighting_2._SY116_CB555624324_.jpg"
+                  />
+                  <p>Lighting solutions</p>
+                </div>
+              </div>
+            </div>
+            <div class="adds hideOnMob">
+              <h3>Starting ₹49 | Deals on home essentials</h3>
+              <div id="addsImgCnt">
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HomeImprovement/harsmisc/2025/March/Wipes_low_res_V1._SY116_CB549138744_.jpg"
+                  />
+                  <p>Cleaning supplies</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HomeImprovement/harsmisc/2025/March/Shower_heads_low_res_V1._SY116_CB549138744_.jpg"
+                  />
+                  <p>Bathroom accessories</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HomeImprovement/harsmisc/2025/March/Tools_low_res_V1._SY116_CB549138744_.jpg"
+                  />
+                  <p>Home tools</p>
+                </div>
+                <div>
+                  <img
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img18/HomeImprovement/harsmisc/2025/March/Wallpapers_low_res_V1._SY116_CB549138744_.jpg"
+                  />
+                  <p>Wallpapers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="addsCnt" style="margin-top: 20px;">
+          <div class="adds">
+            <h3>Up to 50% off | Baby care & toys | Amazon Brands</h3>
+            <div id="addsImgCnt">
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/PB/GW/PC/PC_QC_372x232_Life-Style_2_1x._SY116_CB788857785_.jpg"
+                />
+                <p>Up to 50% off | Baby diapers & wipes</p>
+              </div>
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/PB/GW/PC/PC_QC_372x232_Life-Style_1_1x._SY116_CB788857785_.jpg"
+                />
+                <p>Up to 50% off | Ride ons</p>
+              </div>
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/PB/GW/PC/PC_QC_372x232_Life-Style_3_1x._SY116_CB788857785_.jpg"
+                />
+                <p>Straing rs:-649 | RC cars</p>
+              </div>
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/PB/GW/PC/PC_QC_372x232_Life-Style_4_1x._SY116_CB788857785_.jpg"
+                />
+                <p> Up to 50% off | Baby safety essentials</p>
+              </div>
+            </div>
+          </div>
+          <div class="adds hideOnMob">
+            <h3>Appliances for your home | Up to 55% off</h3>
+            <div id="addsImgCnt">
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Glasscare1X._SY116_CB410830553_.jpg"
+                />
+                <p>Clening accessries</p>
+              </div>
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Rim_tyrecare1x._SY116_CB410830552_.jpg"
+                />
+                <p>Tyre & rim care</p>
+              </div>
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vega_helmet_186x116._SY116_CB405090404_.jpg"
+                />
+                <p>Helmate</p>
+              </div>
+              <div>
+                <img
+                  src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Auto/2020/GW/PCQC/Vaccum1x._SY116_CB410830552_.jpg"
+                />
+                <p>Vacuum cleaner</p>
+              </div>
+            </div>
+          </div>
+          <div class="adds hideOnMob">
+            <h3>Customers’ Most-Loved Fashion for you</h3>
+            <div id="addsImgCnt">
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/71fFKeHHo7L._AC_SY145_.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/61irmRn+6LL._AC_SY145_.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/71Zmqrerm3L._AC_SY145_.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/812vmmHIwvL._AC_SY145_.jpg"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="adds hideOnMob">
+            <h3>Best Sellers in Beauty</h3>
+            <div id="addsImgCnt">
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/51wqZYWGr+L._AC_SY170_.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/61Ti2uv6V3L._AC_SY170_.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/51PbtcW9nML._AC_SY170_.jpg"
+                />
+              </div>
+              <div>
+                <img
+                  src="https://m.media-amazon.com/images/I/71cdcEWtZZL._AC_SY170_.jpg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      <div>Footer</div>
+    </div>
+  </body>
+</html>
