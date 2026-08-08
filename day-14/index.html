@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: url("blob:https://web.whatsapp.com/e454c8c9-e433-4c4c-a1ee-5b3ecdaa9c98") no-repeat center center/cover;
+        height: 100vh;
+    }
+
+    .main {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.55);
+
+    }
+
+    nav {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .logo {
+        color: #ff7200;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #fff;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    nav ul li {
+        margin: 0 18px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: #ff7200;
+    }
+
+    .search {
+        display: flex;
+    }
+
+    .search input {
+        width: 220px;
+        height: 40px;
+        background: transparent;
+        border: 1px solid #ff7200;
+        color: white;
+        padding-left: 10px;
+    }
+
+    .search button {
+        width: 100px;
+        border: none;
+        background: #ff7200;
+        color: white;
+        cursor: pointer;
+    }
+
+    .content {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .left {
+        width: 55%;
+    }
+
+    .left h1 {
+        color: white;
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .left span {
+        color: #ff7200;
+    }
+
+    .left p {
+        color: white;
+        font-size: 22px;
+        margin: 25px 0;
+        line-height: 35px;
+    }
+
+    .join {
+        width: 180px;
+        height: 50px;
+        background: #ff7200;
+        border: none;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .login-box {
+        width: 320px;
+        background: rgba(0, 0, 0, .85);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .login-box h2 {
+        background: white;
+        color: #ff7200;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    .login-box input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #ff7200;
+        padding: 12px;
+        margin: 15px 0;
+        color: white;
+        font-size: 16px;
+    }
+
+    .login-btn {
+        width: 100%;
+        height: 45px;
+        background: #ff7200;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .login-box p {
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login-box a {
+        color: #ff7200;
+        text-decoration: none;
+    }
+
+    .login-box h4 {
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .icons {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .icons i {
+        color: white;
+        font-size: 30px;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .icons i:hover {
+        color: #ff7200;
+    }
+
+    @media(max-width:768px) {
+
+        nav {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .content {
+            flex-direction: column;
+            text-align: center;
+            height: auto;
+        }
+
+        .left {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .left h1 {
+            font-size: 45px;
+            line-height: 55px;
+        }
+
+        .left p {
+            font-size: 18px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .search {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .search input {
+            width: 60%;
+        }
+
+    }
+</style>
+
+<body>
+
+    <div class="main">
+
+        <nav>
+            <div class="logo">Pra<span>Roz</span></div>
+
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">DESIGN</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+
+            <div class="search">
+                <input type="text" placeholder="Type to Search">
+                <button>Search</button>
+            </div>
+        </nav>
+
+        <div class="content">
+
+            <div class="left">
+                <h1>Web Design &<br><span>Development</span><br>Course</h1>
+
+                <p>
+                    Web Design is a specialisation of the design stream.
+                    They also use HTML, CSS, WYSIWYG editing software,
+                    mark up validators etc. to create design elements.
+                </p>
+
+                <button class="join">JOIN US</button>
+            </div>
+
+            <div class="login-box">
+
+                <h2>Login Here</h2>
+
+                <input type="email" placeholder="Enter Email Here">
+
+                <input type="password" placeholder="Enter Password Here">
+
+                <button class="login-btn">Login</button>
+
+                <p>Don't have an account?<br>
+                    <a href="#">Sign up here</a>
+                </p>
+
+                <h4>Log in with</h4>
+
+                <div class="icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-skype"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
