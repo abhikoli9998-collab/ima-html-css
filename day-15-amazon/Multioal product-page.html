@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #111;
+}
+
+
+.product-container {
+    width: 100%;
+    padding: 15px 27px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.product-card {
+    position: relative;
+    min-width: 304px;
+    width: 304px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 365px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 12px 6px 15px 6px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.title {
+    font-size: 18px;
+    line-height: 28px;
+    height: 57px;
+    overflow: hidden;
+}
+
+/* Rating */
+
+.rating {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.rating span {
+    color: #ff6500;
+    font-size: 18px;
+    letter-spacing: -3px;
+}
+
+.rating a {
+    color: #2162a1;
+    margin-left: 4px;
+}
+
+.bought {
+    margin-top: 7px;
+    color: #555;
+    font-size: 14px;
+}
+
+.price {
+    margin-top: 14px;
+    font-size: 30px;
+}
+
+.price span {
+    font-size: 14px;
+    color: #555;
+}
+
+.price b {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.cashback {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.delivery {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.product-info button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 22px;
+    background-color: #ffd21f;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.product-info button:hover {
+    background-color: #f7ca00;
+}
+
+.best-seller {
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    background-color: #e65b00;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.deal {
+    display: inline-block;
+    background-color: #d91445;
+    color: white;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+
+    .product-container {
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 45%;
+        min-width: 280px;
+    }
+
+    .product-img {
+        height: 300px;
+    }
+}
+
+</style>
+<body>
+
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://m.media-amazon.com/images/I/71ODDbxL2LL._AC_UL960_FMwebp_QL65_.jpg" alt="boAt Watch">
+            </div>
+            <div class="product-info">
+                <h3>boAt</h3>
+                <p class="title">
+                    boAt Lunar Discovery Neo, 1.39" (3.5 cm)
+                    Round HD Smart Watch...
+                </p>
+                <div class="rating">
+                    4.0
+                    <span>★★★★☆</span>
+                    <a>(21.5K)</a>
+                </div>
+                <p class="bought">1K+ bought in past month</p>
+                <div class="price">
+                    ₹1,399
+                    <span>M.R.P. <del>₹7,499</del></span>
+                    <b>(81% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI...
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://m.media-amazon.com/images/I/416ygI32K8L._AC_UL480_FMwebp_QL65_.jpg"
+                    alt="London Fog Watch">
+            </div>
+            <div class="product-info">
+                <h3>London Fog</h3>
+                <p class="title">
+                    Westminster Collection Analog-Digital
+                    Quartz Watch for Men...
+                </p>
+                <div class="rating">
+                    4.0
+                    <span>★★★★☆</span>
+                    <a>(1.2K)</a>
+                </div>
+                <p class="bought">500+ bought in past month</p>
+                <div class="price">
+                    ₹1,599
+                    <span>M.R.P. <del>₹3,950</del></span>
+                    <b>(60% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI...
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://m.media-amazon.com/images/I/71rRRI-PsZL._AC_UL320_.jpg"
+                    alt="Goldenize Watch">
+            </div>
+            <div class="product-info">
+                <h3>GOLDENIZE FASHION</h3>
+                <p class="title">
+                    Branded Men's Sport Quartz Watch
+                    Car Wheel Multicolour...
+                </p>
+                <div class="rating">
+                    4.1
+                    <span>★★★★☆</span>
+                    <a>(937)</a>
+                </div>
+                <p class="bought">1K+ bought in past month</p>
+                <div class="price">
+                    ₹498
+                    <span>M.R.P. <del>₹1,899</del></span>
+                    <b>(74% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI...
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Sat, 15 Aug</b><br>
+                    on first order
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://m.media-amazon.com/images/I/51ykbSj-eoL._AC_UL640_FMwebp_QL65_.jpg" alt="Titan Watch">
+            </div>
+            <div class="product-info">
+                <h3>Titan</h3>
+                <p class="title">
+                    Karishma Analog Black Dial Men's
+                    Watch - NM1639SM02 /...
+                </p>
+                <div class="rating">
+                    4.4
+                    <span>★★★★☆</span>
+                    <a>(3.6K)</a>
+                </div>
+                <p class="bought">2K+ bought in past month</p>
+                <div class="price">
+                    ₹1,695
+                    <span>M.R.P. <del>₹1,995</del></span>
+                    <b>(15% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI...
+                </p>
+              <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <span class="best-seller">Best seller</span>
+            <div class="product-img">
+                <img src="https://m.media-amazon.com/images/I/61q0ZgCYoJL._AC_UL320_.jpg"
+                    alt="Fire-Boltt Watch">
+            </div>
+            <div class="product-info">
+                <h3>Fire-Boltt</h3>
+                <p class="title">
+                    Fire-Boltt Ninja Call Pro Max
+                    Bluetooth Calling Smart Watch...
+                </p>
+                <div class="rating">
+                    3.9
+                    <span>★★★★☆</span>
+                    <a>(1.3L)</a>
+                </div>
+                <p class="bought">1K+ bought in past month</p>
+                <div class="deal">
+                    Freedom Sale Mega Deal
+                </div>
+                <div class="price">
+                    ₹1,199
+                    <span>M.R.P. <del>₹14,999</del></span>
+                    <b>(92% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI...
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
