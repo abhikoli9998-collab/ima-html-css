@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Cart</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -14,230 +14,430 @@
         box-sizing: border-box;
     }
 
+    #screenCnt {
+        /* border: 5px solid red; */
+        /* height: 100vh; */
+        background-color: #E3E6E6;
+    }
+
+    #navbarCnt {
+        border: 2px solid black;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: #000000;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #logoCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+    }
+
+    #searchCnt {
+        /* border: 2px solid blue; */
+        width: 50%;
+        height: 74%;
+        display: flex;
+    }
+
+    #profileCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    #profileCnt img {
+        width: 120%;
+
+    }
+
+
+    .imgStyle {
+        height: 100%;
+        width: 44%;
+    }
+
+    #catCnt {
+        /* border: 2px solid yellow; */
+        width: 8%;
+    }
+
+    #catCnt select {
+        background-color: #e6e6e6;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border: none;
+    }
+
+    #seaCnt {
+        /* border: 2px solid yellow; */
+        width: 80%;
+    }
+
+    #seaCnt input {
+        padding-left: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    #subCnt {
+        width: 8%;
+        background-color: #febd6a;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #subCnt span {
+        color: black;
+    }
+
+    .wh-100 {
+        width: 100%;
+        height: 100%;
+    }
+
+    #naviCnt {
+        height: 40px;
+        background-color: #242f3e;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #naviCnt p {
+        font-size: 14px;
+    }
+
+
     body {
         font-family: Arial, Helvetica, sans-serif;
         background-color: #eaeded;
         color: #111;
     }
 
-    .cart-page {
+    .page {
+        margin-top: 5%;
         display: flex;
-        gap: 25px;
-        padding: 40px 20px;
-        min-height: 100vh;
+        gap: 24px;
+        padding: 38px 20px;
     }
 
-    .left-section {
-        width: calc(100% - 420px);
-    }
-
-    .empty-cart {
-        height: 348px;
+    .cart-section {
         background-color: white;
+        width: 77%;
+        padding: 25px;
+    }
 
+    .cart-header {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-
-        padding: 30px 25px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 32px;
     }
 
-    .cart-image {
-        width: 430px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .cart-header h1 {
+        font-size: 36px;
+        font-weight: 400;
     }
 
-    .cart-image img {
-        width: 430px;
-        max-width: 100%;
-    }
-
-    .cart-content {
-        padding-left: 45px;
-    }
-
-    .cart-content h1 {
-        font-size: 30px;
-        margin-bottom: 10px;
-    }
-
-    .deals {
-        color: #0066c0;
-        text-decoration: none;
+    .cart-header span {
+        color: #555;
         font-size: 18px;
-    }
-
-    .deals:hover {
-        text-decoration: underline;
-    }
-
-    .cart-buttons {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-top: 25px;
-    }
-
-    .sign-in {
-        background-color: #ffd814;
-        border: none;
-        border-radius: 25px;
-
-        padding: 10px 18px;
-
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    .sign-in:hover {
-        background-color: #f7ca00;
-    }
-
-    .sign-up {
-        background-color: white;
-        border: 1px solid #888;
-        border-radius: 25px;
-
-        padding: 9px 18px;
-
-        font-size: 18px;
-        cursor: pointer;
-    }
-
-    .white-box {
-        height: 92px;
-        background-color: white;
-        margin-top: 25px;
-    }
-
-    .information {
-        margin-top: 25px;
-        font-size: 15px;
-        line-height: 21px;
-    }
-
-    .information p {
-        margin-bottom: 3px;
-    }
-
-    .right-section {
-        width: 375px;
-        background-color: white;
-
-        border: 1px solid #d5d9d9;
-        border-radius: 8px;
-
-        padding: 20px 22px;
-
-        overflow: hidden;
-    }
-
-    .right-section h2 {
-        font-size: 23px;
-        line-height: 29px;
-        margin-bottom: 20px;
     }
 
     .product {
         display: flex;
-        width: 100%;
-        margin-bottom: 35px;
+        position: relative;
+        gap: 20px;
+        padding: 30px 0;
+        border-bottom: 1px solid #ddd;
+        min-height: 280px;
     }
 
     .product-image {
-        width: 125px;
-        min-width: 125px;
-
+        width: 230px;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .product-image img {
-        width: 115px;
-        height: 115px;
+        width: 210px;
+        max-height: 220px;
         object-fit: contain;
     }
 
     .product-details {
-        padding-left: 10px;
-        width: 100%;
+        flex: 1;
+        padding-right: 20px;
     }
 
-    .product-name {
-        display: block;
+    .product-details h2 {
+        font-size: 22px;
+        line-height: 1.35;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
 
+    .stock {
+        color: #007600;
+        margin: 8px 0;
+    }
+
+    .product-details p {
+        margin: 8px 0;
+    }
+
+    .fulfilled {
+        display: inline-block;
+        background-color: #37475a;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 2px;
+        font-size: 13px;
+    }
+
+    .gift {
+        margin-top: 8px;
+    }
+
+    .gift input {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+    a {
         color: #0066c0;
         text-decoration: none;
-
-        font-size: 17px;
-
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
-    .product-name:hover {
-        text-decoration: underline;
+    .gift a {
+        margin-left: 5px;
+    }
+
+    .colour {
+        margin-top: 12px !important;
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        border: 3px solid #ffd000;
+        border-radius: 20px;
+        padding: 3px 10px;
+    }
+
+    .quantity button {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .quantity span {
+        font-size: 18px;
+    }
+
+    .price {
+        width: 170px;
+        text-align: right;
+    }
+
+    .discount {
+        display: block;
+        background-color: #e4002b;
+        color: white;
+        padding: 7px;
+        font-weight: bold;
+        width: fit-content;
+        margin-left: auto;
+    }
+
+    .deal {
+        display: block;
+        color: #e4002b;
+        margin: 5px 0;
+    }
+
+    .price strong {
+        display: block;
+        font-size: 22px;
+    }
+
+    .price p {
+        margin-top: 8px;
+        color: #555;
+    }
+
+    .subtotal {
+        text-align: right;
+        font-size: 22px;
+        padding-top: 12px;
+    }
+
+    .subtotal b {
+        font-size: 23px;
+    }
+
+    .right-section {
+        width: 23%;
+    }
+
+    .buy-box {
+        background-color: white;
+        padding: 25px;
+    }
+
+    .progress {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .progress div {
+        height: 18px;
+        background-color: #087f3f;
+        border-radius: 20px;
+        width: 80%;
+    }
+
+    .delivery {
+        color: #555;
+        line-height: 1.4;
+        margin: 10px 0 25px;
+    }
+
+    .delivery b {
+        color: #087f3f;
+    }
+
+    .buy-box h2 {
+        font-size: 21px;
+        font-weight: 400;
+        margin-bottom: 15px;
+    }
+
+    .buy-box h2 b {
+        font-weight: bold;
+    }
+
+    .gift-check {
+        display: block;
+        font-size: 16px;
+    }
+
+    .gift-check input {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+    }
+
+    .buy-button {
+        width: 100%;
+        border: none;
+        background-color: #ffd814;
+        padding: 12px;
+        border-radius: 25px;
+        font-size: 17px;
+        margin: 25px 0;
+        cursor: pointer;
+    }
+
+    .buy-button:hover {
+        background-color: #f7ca00;
+    }
+
+    .emi {
+        border: 1px solid #ddd;
+        padding: 22px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+    }
+
+
+    .recommendation {
+        background-color: white;
+        margin-top: 28px;
+        padding: 25px;
+    }
+
+    .recommendation h2 {
+        font-size: 21px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .recommended-product {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .recommended-product img {
+        width: 110px;
+        height: 150px;
+        object-fit: contain;
+    }
+
+    .recommended-product a {
+        font-size: 16px;
     }
 
     .rating {
-        color: #ff6b00;
-        font-size: 19px;
-        margin-top: 3px;
+        color: #ff9900;
+        margin: 8px 0;
     }
 
     .rating span {
         color: #0066c0;
-        font-size: 14px;
-        margin-left: 3px;
     }
 
-    .price {
-        font-size: 21px;
-        margin-top: 3px;
-    }
-
-    .discount {
-        color: #cc0000;
-        font-size: 20px;
+    .red {
+        color: #d00;
         margin-right: 5px;
     }
 
-    .price sup {
-        font-size: 11px;
+    .recommended-product strong {
+        font-size: 20px;
     }
-    .mrp {
-        color: #555;
-        font-size: 13px;
-        margin-top: 2px;
-    }
-
-    .delivery {
-        font-size: 14px;
-        margin-top: 7px;
-        line-height: 18px;
-    }
-
-    .free {
-        font-size: 14px;
-        margin-top: 6px;
-    }
-
 
     .add-cart {
+        border: 1px solid #f0ad00;
         background-color: #ffd814;
-        border: none;
-
-        border-radius: 18px;
-
-        padding: 7px 15px;
-
-        font-size: 14px;
-
-        margin-top: 7px;
-
+        padding: 8px 15px;
+        border-radius: 20px;
         cursor: pointer;
     }
 
@@ -245,255 +445,528 @@
         background-color: #f7ca00;
     }
 
-    @media (max-width: 768px) {
 
-        .cart-page {
+    @media (max-width: 768px) {
+        #searchCnt {
+            display: none;
+        }
+
+        #logoCnt {
+            width: 30%;
+        }
+
+        .imgStyle {
+            width: 100%;
+        }
+
+        #profileCnt img {
+            width: 48%;
+        }
+
+        #navbarCnt {
+            justify-content: space-between;
+        }
+
+        .hideOnMob {
+            display: none;
+        }
+
+        #sliderCnt {
+            height: calc(52vh);
+            background-size: contain;
+            background-clip: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .page {
             display: flex;
             flex-direction: column;
+            gap: 15px;
+            padding: 15px 10px;
+        }
 
+        .cart-section {
+            width: 100%;
             padding: 15px;
         }
 
-        .left-section {
-            width: 100%;
+        .cart-header {
+            padding-bottom: 20px;
         }
 
-        .right-section {
-            width: 100%;
+        .cart-header h1 {
+            font-size: 25px;
         }
 
-        .empty-cart {
-            height: auto;
-
-            flex-direction: column;
-
-            text-align: center;
-
-            padding: 25px 15px;
+        .cart-header span {
+            font-size: 14px;
         }
 
-        .cart-image {
-            width: 100%;
-        }
-
-        .cart-image img {
-            width: 300px;
-        }
-
-        .cart-content {
-            padding-left: 0;
-            margin-top: 20px;
-        }
-
-        .cart-content h1 {
-            font-size: 24px;
-        }
-
-        .cart-buttons {
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .white-box {
-            height: 70px;
-        }
-
-
-        .right-section {
-            padding: 20px;
-        }
-
-        .right-section h2 {
-            font-size: 20px;
-            line-height: 25px;
-        }
-
+        /* Product */
         .product {
-            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px 0;
+            min-height: auto;
         }
 
         .product-image {
-            width: 130px;
-            min-width: 130px;
+            width: 110px;
+            height: 150px;
         }
 
         .product-image img {
-            width: 120px;
+            width: 100px;
+            max-height: 140px;
+        }
+
+        .product-details {
+            width: calc(100% - 120px);
+            padding-right: 0;
+        }
+
+        .product-details h2 {
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .stock {
+            font-size: 14px;
+        }
+
+        .product-details p {
+            font-size: 14px;
+        }
+
+        .fulfilled {
+            font-size: 11px;
+        }
+
+        .gift {
+            font-size: 13px;
+        }
+
+        .gift input {
+            width: 16px;
+            height: 16px;
+        }
+
+        .colour {
+            font-size: 14px;
+        }
+
+        /* Quantity */
+        .actions {
+            width: 100%;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quantity {
+            gap: 18px;
+            border: 2px solid #ffd000;
+            padding: 3px 8px;
+        }
+
+        .quantity button {
+            font-size: 18px;
+        }
+
+        .quantity span {
+            font-size: 16px;
+        }
+
+        /* Price */
+        .price {
+            width: 100%;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .discount {
+            margin-left: 0;
+            display: inline-block;
+            padding: 5px;
+            font-size: 13px;
+        }
+
+        .deal {
+            font-size: 14px;
+        }
+
+        .price strong {
+            font-size: 20px;
+        }
+
+        .price p {
+            font-size: 13px;
+        }
+
+        /* Subtotal */
+        .subtotal {
+            text-align: right;
+            font-size: 18px;
+            padding-top: 15px;
+        }
+
+        .subtotal b {
+            font-size: 20px;
+        }
+
+        /* Right Section */
+        .right-section {
+            width: 100%;
+        }
+
+        .buy-box {
+            padding: 18px;
+        }
+
+        .buy-box h2 {
+            font-size: 18px;
+        }
+
+        .delivery {
+            font-size: 14px;
+        }
+
+        .gift-check {
+            font-size: 14px;
+        }
+
+        .gift-check input {
+            width: 17px;
+            height: 17px;
+        }
+
+        .buy-button {
+            font-size: 16px;
+            padding: 11px;
+            margin: 20px 0;
+        }
+
+        .emi {
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        /* Recommendation */
+        .recommendation {
+            margin-top: 15px;
+            padding: 15px;
+        }
+
+        .recommendation h2 {
+            font-size: 18px;
+        }
+
+        .recommended-product {
+            gap: 10px;
+        }
+
+        .recommended-product img {
+            width: 85px;
             height: 120px;
         }
 
+        .recommended-product a {
+            font-size: 14px;
+        }
+
+        .rating {
+            font-size: 14px;
+        }
+
+        .recommended-product strong {
+            font-size: 18px;
+        }
+
+        .add-cart {
+            padding: 7px 12px;
+            font-size: 13px;
+        }
     }
 </style>
 
 <body>
+    <div id="navbarCnt">
+        <div id="logoCnt">
+            <img class="imgStyle"
+                src="https://www.thesun.co.uk/wp-content/uploads/2022/02/Amazon-Logo-1024x426-1.png?strip=all&w=960" />
+        </div>
+        <div id="searchCnt">
+            <div id="catCnt">
+                <select class="wh-100">
+                    <option>All</option>
+                    <option>mobile</option>
+                    <option>watch</option>
+                    <option>laptop</option>
+                </select>
+            </div>
+            <div id="seaCnt">
+                <input class="wh-100" placeholder="Search Amazon.in" />
+            </div>
+            <div id="subCnt">
+                <span class="material-symbols-outlined"> search </span>
+            </div>
+        </div>
+        <div id="profileCnt">
+            <a href="loging-page.html">
+                <img src="../profile.com.svg" alt="About">
+            </a>
+            <a href="cart.html">
+                <img src="../cart.svg" alt="About">
+            </a>
+        </div>
+    </div>
+    <div id="naviCnt">
+        <p>All</p>
+        <p>Fresh</p>
+        <p>Mx Player</p>
+        <p>Sell</p>
+        <p>Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+        <p class="hideOnMob">All</p>
+        <p class="hideOnMob">Fresh</p>
+        <p class="hideOnMob">Mx Player</p>
+        <p class="hideOnMob">Sell</p>
+        <p class="hideOnMob">Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+    </div>
 
-    <div class="cart-page">
+    <div class="page">
 
-        <div class="left-section">
-            <div class="empty-cart">
+        <div class="cart-section">
 
+            <div class="cart-header">
+                <h1>Shopping Cart</h1>
+                <span>Price</span>
+            </div>
+            <div class="product">
 
-                <div class="cart-content">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61e65wIeXQL._AC_AA180_.jpg" alt="Smart Watch">
+                </div>
 
-                    <h1>Your Amazon Cart is empty</h1>
+                <div class="product-details">
+                    <h2>
+                        Amazfit Active 3 Premium(Smartchoice)GPS Running Smart Watch,
+                        1.32"AMOLED Sapphire Display,12-Day Battery,4GB Storage,
+                        Offline Maps, 170+Workout Modes, 5 A...
+                    </h2>
 
-                    <a href="#" class="deals">Shop today's deals</a>
+                    <p class="stock">In stock</p>
 
-                    <div class="cart-buttons">
-                        <button class="sign-in">
-                            Sign in to your account
-                        </button>
+                    <p>
+                        <b>FREE delivery</b> Fri, 14 Aug available at checkout
+                    </p>
 
-                        <button class="sign-up">
-                            Sign up now
-                        </button>
+                    <img src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png">
+
+                    <div class="gift">
+                        <input type="checkbox">
+                        This will be a gift
+                        <a href="#">Learn more</a>
                     </div>
 
+                    <p class="colour">
+                        <b>Colour:</b> Apex Silver
+                    </p>
+
+                    <div class="actions">
+
+                        <div class="quantity">
+                            <button>🗑</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+
+                        <a href="#">Delete</a>
+                        <a href="#">Save for later</a>
+                        <a href="#">Share</a>
+
+                    </div>
+                </div>
+
+                <div class="price">
+                    <span class="discount">25% off</span>
+                    <b class="deal">Freedom Sale Mega Deal</b>
+                    <strong>₹14,999.00</strong>
+                    <p>M.R.P.: <del>₹19,999.00</del></p>
                 </div>
 
             </div>
 
-            <div class="white-box"></div>
+            <div class="product">
 
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/7121PGdeQML._AC_AA180_.jpg"
+                        alt="Robot Vacuum Cleaner">
+                </div>
 
-            <div class="information">
+                <div class="product-details">
+                    <h2>
+                        ECOVACS Deebot N50 Pro Omni 2 in 1 Robotic Vacuum Cleaner &
+                        Mop, 2026 New Launch 25000 Pa Suction, Self-Emptying
+                        Omni-Station, Zerotangle 3.0, Hot Air-Dryin...
+                    </h2>
 
-                <p>
-                    The price and availability of items at Amazon.in are subject to change.
-                    The shopping cart is a temporary place to store a list of your items
-                    and reflects each item's most recent price.
-                </p>
+                    <p class="stock">In stock</p>
 
-                <p>
-                    Do you have a gift card or promotional code? We'll ask you to enter
-                    your claim code when it's time to pay.
-                </p>
+                    <p>
+                        <b>FREE delivery</b> Fri, 14 Aug available at checkout
+                    </p>
+                    <img src="https://m.media-amazon.com/images/G/31/marketing/fba/fba-badge_18px._CB485936079_.png">
 
+                    <div class="gift">
+                        <input type="checkbox">
+                        This will be a gift
+                        <a href="#">Learn more</a>
+                    </div>
+
+                    <p class="colour">
+                        <b>Colour:</b> N50 PRO OMNI
+                    </p>
+
+                    <div class="actions">
+
+                        <div class="quantity">
+                            <button>🗑</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+
+                        <a href="#">Delete</a>
+                        <a href="#">Save for later</a>
+                        <a href="#">Share</a>
+
+                    </div>
+                </div>
+
+                <div class="price">
+                    <span class="discount">68% off</span>
+                    <b class="deal">Freedom Sale Mega Deal</b>
+                    <strong>₹53,999.00</strong>
+                    <p>M.R.P.: <del>₹1,69,999.00</del></p>
+                </div>
+
+            </div>
+
+            <div class="subtotal">
+                Subtotal (2 items):
+                <b>₹68,998.00</b>
             </div>
 
         </div>
 
         <div class="right-section">
 
-            <h2>
-                Customers who bought items<br>
-                in your Recent History also<br>
-                bought
-            </h2>
+            <div class="buy-box">
 
-            <div class="product">
-
-                <div class="product-image">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/I/51ywHGbusAL._AC_UL200_SR200,200_.jpg" alt="Apple Charger">
+                <div class="progress">
+                    <div></div>
+                    <span>₹499</span>
                 </div>
 
-                <div class="product-details">
+                <p class="delivery">
+                    ✔ <b>Your order is eligible for FREE Delivery.</b>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;Choose <a href="#">FREE Delivery</a> option at checkout.
+                </p>
 
-                    <a href="#" class="product-name">
-                        Apple 35W Dual USB
-                    </a>
+                <h2>
+                    Subtotal (2 items):
+                    <b>₹68,998.00</b>
+                </h2>
 
-                    <div class="rating">
-                        ★★★★☆ <span>235</span>
-                    </div>
+                <label class="gift-check">
+                    <input type="checkbox">
+                    This order contains a gift
+                </label>
+                <a href="./payment.html">
+                <button class="buy-button">
+                    Proceed to Buy
+                </button></a>
 
-                    <div class="price">
-                        <span class="discount">-11%</span>
-                        ₹5,149<sup>00</sup>
-                    </div>
-
-                    <div class="mrp">
-                        M.R.P: <s>₹5,800.00</s>
-                    </div>
-
-                    <p class="delivery">
-                        Get it by <b>Friday, August 14</b>
-                    </p>
-
-                    <p class="free">
-                        FREE Delivery by Amazon
-                    </p>
-
-                    <button class="add-cart">
-                        Add to cart
-                    </button>
-
+                <div class="emi">
+                    <b>EMI Available</b>
+                    <span>⌄</span>
                 </div>
 
             </div>
-            <div class="product">
+            <div class="recommendation">
 
-                <div class="product-image">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/I/51NQBUQEH-L._AC_UL200_SR200,200_.jpg" alt="Belkin Cable">
+                <h2>
+                    Customers who shopped for
+                    Amazfit Active 3 Premium(Smartchoice)GPS
+                    Running S... also shopped for:
+                </h2>
+
+                <div class="recommended-product">
+
+                    <img src="https://images-eu.ssl-images-amazon.com/images/I/71XpjL4qkPL._AC_UL200_SR200,200_.jpg"
+                        alt="Amazfit Watch">
+
+                    <div>
+                        <a href="#">Amazfit Active 2...</a>
+
+                        <p class="rating">
+                            ★★★★☆ <span>1,453</span>
+                        </p>
+
+                        <p>
+                            <span class="red">-52%</span>
+                            <strong>₹11,999</strong>
+                        </p>
+
+                        <small>M.R.P.: <del>₹24,999.00</del></small>
+
+                        <p>
+                            Get it by <b>Wednesday,<br>
+                                August 19</b>
+                        </p>
+
+                        <p>FREE Delivery by Amazon</p>
+
+                        <button class="add-cart">
+                            Add to cart
+                        </button>
+                    </div>
+
                 </div>
 
-                <div class="product-details">
 
-                    <a href="#" class="product-name">
-                        Belkin Apple Certified
-                    </a>
+                <div class="recommended-product">
 
-                    <div class="rating">
-                        ★★★★☆ <span>451</span>
+                    <img src="https://images-eu.ssl-images-amazon.com/images/I/61eLhGc40TL._AC_UL200_SR200,200_.jpg"
+                        alt="Amazfit Watch">
+
+                    <div>
+                        <a href="#">Amazfit Active...</a>
+
+                        <p class="rating">
+                            ★★★★☆ <span>1,234</span>
+                        </p>
+
+                        <p>
+                            <span class="red">-45%</span>
+                            <strong>₹12,999</strong>
+                        </p>
+
+                        <button class="add-cart">
+                            Add to cart
+                        </button>
                     </div>
-
-                    <div class="price">
-                        <span class="discount">-50%</span>
-                        ₹699<sup>00</sup>
-                    </div>
-
-                    <div class="mrp">
-                        M.R.P: <s>₹1,399.00</s>
-                    </div>
-
-                    <p class="delivery">
-                        Get it by <b>Friday, August 14</b>
-                    </p>
-
-                    <p class="free">
-                        FREE Delivery by Amazon
-                    </p>
-
-                    <button class="add-cart">
-                        Add to cart
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="product">
-
-                <div class="product-image">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/I/41I1B-HVlRL._AC_UL200_SR200,200_.jpg" alt="Wireless Earbuds">
-                </div>
-
-                <div class="product-details">
-
-                    <a href="#" class="product-name">
-                        INOVERA (LABEL) 
-                    </a>
-
-                    <div class="rating">
-                        ★★★★☆ <span>303</span>
-                    </div>
-
-                    <div class="price">
-                        <span class="discount">-67%</span>
-                        ₹198<sup>00</sup>
-                    </div>
-
-                    <div class="mrp">
-                        M.R.P: <s>₹599.00</s>
-                    </div>
-
-                    <p class="delivery">
-                        Get it by <b>Friday, August 14</b>
-                    </p>
-
-                    <button class="add-cart">
-                        Add to cart
-                    </button>
 
                 </div>
 

@@ -30,6 +30,7 @@
         font-weight: bold;
         padding-top: 8px;
     }
+
     .main {
         /* border: 2px solid red; */
         min-height: 230px;
@@ -156,6 +157,35 @@
 
 
     @media (max-width: 600px) {
+        #searchCnt {
+            display: none;
+        }
+
+        #logoCnt {
+            width: 30%;
+        }
+
+        .imgStyle {
+            width: 100%;
+        }
+
+        #profileCnt img {
+            width: 48%;
+        }
+
+        #navbarCnt {
+            justify-content: space-between;
+        }
+
+        .hideOnMob {
+            display: none;
+        }
+
+        #sliderCnt {
+            height: calc(52vh);
+            background-size: contain;
+            background-clip: border-box;
+        }
 
         .logo {
             margin-top: 10px;
@@ -230,7 +260,10 @@
 
             <input type="text" autofocus>
 
+            <a href="regisister.html">
+
             <button>Continue</button>
+        </a>
 
             <p class="text">
                 By continuing, you agree to Amazon's

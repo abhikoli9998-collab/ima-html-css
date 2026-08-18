@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amazon Clone</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    #screenCnt {
+        /* border: 5px solid red; */
+        /* height: 100vh; */
+        background-color: #E3E6E6;
+    }
+
+    #navbarCnt {
+        border: 2px solid black;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: #000000;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #logoCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+    }
+
+    #searchCnt {
+        /* border: 2px solid blue; */
+        width: 50%;
+        height: 74%;
+        display: flex;
+    }
+
+    #profileCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    #profileCnt img {
+        width: 120%;
+
+    }
+
+
+    .imgStyle {
+        height: 100%;
+        width: 44%;
+    }
+
+    #catCnt {
+        /* border: 2px solid yellow; */
+        width: 8%;
+    }
+
+    #catCnt select {
+        background-color: #e6e6e6;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border: none;
+    }
+
+    #seaCnt {
+        /* border: 2px solid yellow; */
+        width: 80%;
+    }
+
+    #seaCnt input {
+        padding-left: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    #subCnt {
+        width: 8%;
+        background-color: #febd6a;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #subCnt span {
+        color: black;
+    }
+
+    .wh-100 {
+        width: 100%;
+        height: 100%;
+    }
+
+    #naviCnt {
+        height: 40px;
+        background-color: #242f3e;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #naviCnt p {
+        font-size: 14px;
+    }
+
+
+    body {
+        background-color: #eaeded;
+        color: #111;
+        margin-top: 7%;
+    }
+
+    .menu {
+        height: 45px;
+        background-color: #232f3e;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 0 25px;
+        font-size: 14px;
+    }
+
+    .menu span {
+        cursor: pointer;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .order-tabs {
+        background-color: white;
+        display: flex;
+        gap: 35px;
+        padding: 18px 20px;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 25px;
+    }
+
+    .order-tabs span {
+        cursor: pointer;
+        color: #333;
+    }
+
+    .order-tabs .active {
+        color: #c45500;
+        font-weight: bold;
+        border-bottom: 3px solid #c45500;
+        padding-bottom: 10px;
+    }
+
+    .order-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
+
+    .order-header {
+        background-color: #f0f2f2;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1.5fr;
+        padding: 18px 25px;
+        gap: 20px;
+    }
+
+    .order-header small {
+        font-size: 12px;
+        color: #565959;
+    }
+
+    .order-header p {
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    .blue {
+        color: #007eb9;
+    }
+
+    .order-id {
+        text-align: right;
+    }
+
+    .order-body {
+        padding: 25px;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .product {
+        display: flex;
+        gap: 25px;
+        flex: 1;
+    }
+
+    .product img {
+        width: 180px;
+        height: 180px;
+
+        object-fit: contain;
+    }
+
+    .product-info h2 {
+        font-size: 18px;
+        color: #007185;
+        margin-bottom: 15px;
+    }
+
+    .product-info p {
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    .green {
+        color: #007600;
+        font-weight: bold;
+    }
+
+    .yellow-btn {
+        background-color: #ffd814;
+        border: 1px solid #fcd200;
+        padding: 9px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .yellow-btn:hover {
+        background-color: #f7ca00;
+    }
+
+    .order-actions {
+        width: 210px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .order-actions button {
+        background-color: white;
+        border: 1px solid #888;
+        border-radius: 7px;
+        padding: 10px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .order-actions button:hover {
+        background-color: #f3f3f3;
+    }
+
+    @media (max-width: 768px) {
+
+        #searchCnt {
+            display: none;
+        }
+
+        #logoCnt {
+            width: 30%;
+        }
+
+        .imgStyle {
+            width: 100%;
+        }
+
+        #profileCnt img {
+            width: 88%;
+        }
+
+        #navbarCnt {
+            justify-content: space-between;
+        }
+
+        .hideOnMob {
+            display: none;
+        }
+
+        #sliderCnt {
+            height: calc(52vh);
+            background-size: contain;
+            background-clip: border-box;
+        }
+
+
+        .menu {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .order-tabs {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        body {
+            margin-top: 25%;
+        }
+
+        .order-header {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .order-id {
+            text-align: left;
+        }
+
+        .order-body {
+            flex-direction: column;
+        }
+
+        .product {
+            flex-direction: column;
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .order-actions {
+            width: 100%;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="navbarCnt">
+        <div id="logoCnt">
+            <img class="imgStyle"
+                src="https://www.thesun.co.uk/wp-content/uploads/2022/02/Amazon-Logo-1024x426-1.png?strip=all&w=960" />
+        </div>
+        <div id="searchCnt">
+            <div id="catCnt">
+                <select class="wh-100">
+                    <option>All</option>
+                    <option>mobile</option>
+                    <option>watch</option>
+                    <option>laptop</option>
+                </select>
+            </div>
+            <div id="seaCnt">
+                <input class="wh-100" placeholder="Search Amazon.in" />
+            </div>
+            <div id="subCnt">
+                <span class="material-symbols-outlined"> search </span>
+            </div>
+        </div>
+        <div id="profileCnt">
+            <a href="loging-page.html">
+                <img src="../profile.com.svg" alt="About">
+            </a>
+            <a href="cart.html">
+                <img src="../cart.svg" alt="About">
+            </a>
+        </div>
+    </div>
+    <div id="naviCnt">
+        <p>All</p>
+        <p>Fresh</p>
+        <p>Mx Player</p>
+        <p>Sell</p>
+        <p>Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+        <p class="hideOnMob">All</p>
+        <p class="hideOnMob">Fresh</p>
+        <p class="hideOnMob">Mx Player</p>
+        <p class="hideOnMob">Sell</p>
+        <p class="hideOnMob">Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+    </div>
+    <main>
+        <h1>Your Orders</h1>
+
+        <div class="order-tabs">
+            <span class="active">Orders</span>
+            <span>Buy Again</span>
+            <span>Not Yet Shipped</span>
+            <span>Cancelled Orders</span>
+        </div>
+
+        <div class="order-card">
+            <div class="order-header">
+                <div>
+                    <small>ORDER PLACED</small>
+                    <p>August 10, 2026</p>
+                </div>
+                <div>
+                    <small>TOTAL</small>
+                    <p>₹1,499.00</p>
+                </div>
+                <div>
+                    <small>SHIP TO</small>
+                    <p class="blue">Abhishek Koli ▾</p>
+                </div>
+                <div class="order-id">
+                    <small>ORDER #</small>
+                    <p>404-1234567-9876543</p>
+                </div>
+            </div>
+            <div class="order-body">
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/61CGHv6kmWL._AC_UY327_FMwebp_QL65_.jpg"
+                        alt="Headphones">
+                    <div class="product-info">
+                        <h2>Wireless Bluetooth Headphones</h2>
+                        <p class="green">
+                            Delivered Aug 13, 2026
+                        </p>
+                        <p>
+                            Your package was delivered successfully.
+                        </p>
+                        <button class="yellow-btn">
+                            Buy it again
+                        </button>
+                    </div>
+                </div>
+                <div class="order-actions">
+                    <button onclick="trackOrder()">
+                        Track package
+                    </button>
+                    <button>
+                        View your item
+                    </button>
+                    <button>
+                        Write a product review
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="order-card">
+            <div class="order-header">
+                <div>
+                    <small>ORDER PLACED</small>
+                    <p>August 5, 2026</p>
+                </div>
+                <div>
+                    <small>TOTAL</small>
+                    <p>₹799.00</p>
+                </div>
+                <div>
+                    <small>SHIP TO</small>
+                    <p class="blue">Abhishek Koli ▾</p>
+                </div>
+                <div class="order-id">
+                    <small>ORDER #</small>
+                    <p>404-7654321-1234567</p>
+                </div>
+            </div>
+            <div class="order-body">
+                <div class="product">
+                    <img src="https://m.media-amazon.com/images/I/71PuVChUUIL.jpg" alt="Keyboard">
+                    <div class="product-info">
+                        <h2>Wireless Keyboard and Mouse Combo</h2>
+                        <p class="green">
+                            Delivered Aug 8, 2026
+                        </p>
+                        <p>
+                            Your package was delivered successfully.
+                        </p>
+                        <button class="yellow-btn">
+                            Buy it again
+                        </button>
+                    </div>
+                </div>
+                <div class="order-actions">
+                    <button onclick="trackOrder()">
+                        Track package
+                    </button>
+                    <button>
+                        View your item
+                    </button>
+                    <button>
+                        Write a product review
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function trackOrder() {
+            alert("Your package is on the way! 🚚");
+        }
+    </script>
+</body>
+
+</html>
