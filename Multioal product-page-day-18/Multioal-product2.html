@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Product Page</title>
-
+    <title>Watch Products</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -13,6 +12,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        /* background-color: white; */
     }
 
     #screenCnt {
@@ -132,335 +132,145 @@
 
     body {
         font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
         color: #111;
-        background-color: white;
     }
 
-    .main-container {
+
+    .product-container {
         width: 100%;
-        min-height: 100vh;
-
-        display: grid;
-        grid-template-columns: 42% 37% 21%;
-
-        gap: 20px;
-        padding: 20px 30px;
-        margin-top: 7%;
-    }
-
-    .left-section {
-        text-align: center;
-    }
-
-    .product-image {
-        width: 100%;
-        height: 540px;
-
+        padding: 15px 27px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background-color: white;
+        gap: 10px;
+        overflow-x: auto;
+        margin-top: 100px;
     }
 
-    .product-image img {
-        width: 85%;
-        height: 90%;
-        object-fit: contain;
-    }
-
-    .full-view {
-        color: #146eb4;
-        font-size: 17px;
-        margin: 10px 0 20px;
-    }
-
-    .thumbnails {
-        display: flex;
-        gap: 12px;
-        justify-content: center;
-    }
-
-    .thumb {
-        width: 90px;
-        height: 90px;
-
-        border: 1px solid #bbb;
+    .product-card {
+        position: relative;
+        min-width: 304px;
+        width: 304px;
+        border: 1px solid #ddd;
         border-radius: 6px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+        background-color: #fff;
         overflow: hidden;
     }
 
-    .thumb img {
+    .product-img {
+        width: 100%;
+        height: 365px;
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-img img {
         width: 100%;
         height: 100%;
         object-fit: contain;
     }
 
-
-    .middle-section {
-        padding: 0 5px;
+    .product-info {
+        padding: 12px 6px 15px 6px;
     }
 
-    .middle-section h1 {
-        font-size: 30px;
-        line-height: 1.3;
-        font-weight: 400;
-        margin-bottom: 8px;
-    }
-
-    a {
-        color: #0066c0;
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: #c45500;
-        text-decoration: underline;
-    }
-
-    .store {
-        font-size: 16px;
-    }
-
-    .rating {
-        margin-top: 12px;
-        display: flex;
-        align-items: center;
-        gap: 7px;
-    }
-
-    .stars {
-        color: #ff6b00;
+    .product-info h3 {
         font-size: 18px;
-        letter-spacing: -2px;
+        margin-bottom: 7px;
     }
 
-    .best-seller {
-        margin-top: 15px;
-    }
-
-    .best-seller span {
-        background-color: #e45500;
-        color: white;
-
-        padding: 6px 8px;
-        border-radius: 3px;
-
-        font-size: 14px;
-        margin-right: 10px;
-    }
-
-    .bought {
-        margin-top: 18px;
-        margin-bottom: 10px;
-    }
-
-    hr {
-        border: 0;
-        border-top: 1px solid #ddd;
-    }
-
-    .price {
-        font-size: 38px;
-        margin-top: 18px;
-    }
-
-    .rupee {
-        font-size: 20px;
-        vertical-align: top;
-    }
-
-    .middle-section p {
-        margin-top: 8px;
-    }
-
-    .offers-title {
-        display: flex;
-        gap: 15px;
-
-        margin-top: 20px;
-        margin-bottom: 10px;
-
-        font-size: 20px;
-    }
-
-    .offers {
-        display: flex;
-        gap: 8px;
+    .title {
+        font-size: 18px;
+        line-height: 28px;
+        height: 57px;
         overflow: hidden;
     }
 
-    .offer-card {
-        min-width: 190px;
-        height: 150px;
-
-        border: 1px solid #ddd;
-        border-radius: 8px;
-
-        padding: 14px;
-
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-    }
-
-    .offer-card h3 {
-        font-size: 17px;
-        margin-bottom: 10px;
-    }
-
-    .offer-card p {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .offer-card a {
-        display: block;
-        margin-top: 8px;
-    }
-
-    .features {
-        display: flex;
-        justify-content: space-around;
-
-        margin-top: 25px;
-        padding-top: 10px;
-    }
-
-    .features div {
-        text-align: center;
-    }
-
-    .feature-icon {
-        font-size: 27px;
-    }
-
-    .features p {
-        color: #146eb4;
+    .rating {
+        margin-top: 10px;
         font-size: 14px;
     }
 
-    .right-section {
-        width: 100%;
-    }
-
-    .prime-box {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-
-        padding: 18px;
-        margin-bottom: 15px;
-
-        background-color: #f8ffff;
-    }
-
-    .prime-box h2 {
-        color: #1683f5;
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-
-    .prime-box p {
-        line-height: 1.5;
-        font-size: 15px;
-    }
-
-    .prime-box a {
-        display: block;
-        margin-top: 12px;
-        font-weight: bold;
-    }
-
-    .buy-box {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-
-        padding: 22px;
-    }
-
-    .buy-price {
-        font-size: 35px;
-        margin-bottom: 20px;
-    }
-
-    .buy-price span {
+    .rating span {
+        color: #ff6500;
         font-size: 18px;
-        vertical-align: top;
+        letter-spacing: -3px;
     }
 
-    .buy-price sup {
-        font-size: 16px;
+    .rating a {
+        color: #2162a1;
+        margin-left: 4px;
     }
 
-    .buy-box p {
-        line-height: 1.5;
-        margin-bottom: 14px;
-    }
-
-    .green {
-        color: #008a4b;
-    }
-
-    .location {
+    .bought {
+        margin-top: 7px;
+        color: #555;
         font-size: 14px;
     }
 
-    .stock {
-        color: #008a00;
-        font-weight: 400;
-        margin: 20px 0;
+    .price {
+        margin-top: 14px;
+        font-size: 30px;
     }
 
-    select {
+    .price span {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .price b {
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .cashback {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .delivery {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .product-info button {
         width: 100%;
         height: 40px;
-
-        border: 1px solid #999;
-        border-radius: 7px;
-
-        padding: 0 12px;
-        font-size: 15px;
-
-        margin-bottom: 15px;
-    }
-
-    .cart-btn,
-    .buy-btn {
-        width: 100%;
-        height: 45px;
-
-        border: 0;
-        border-radius: 25px;
-
+        border: none;
+        border-radius: 22px;
+        background-color: #ffd21f;
         font-size: 17px;
         cursor: pointer;
-
-        margin-bottom: 10px;
+        margin-top: 12px;
     }
 
-    .cart-btn {
-        background-color: #ffd814;
-    }
-
-    .cart-btn:hover {
+    .product-info button:hover {
         background-color: #f7ca00;
     }
 
-    .buy-btn {
-        background-color: #ff9900;
+    .best-seller {
+        position: absolute;
+        top: 7px;
+        left: 6px;
+        background-color: #e65b00;
+        color: white;
+        padding: 6px 8px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        z-index: 5;
     }
 
-    .buy-btn:hover {
-        background-color: #e68a00;
-    }
-
-    .shipping {
-        border-top: 1px solid #ddd;
-        margin-top: 15px;
-        padding-top: 10px;
+    .deal {
+        display: inline-block;
+        background-color: #d91445;
+        color: white;
+        padding: 8px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: bold;
     }
 
     footer {
@@ -561,7 +371,7 @@
         line-height: 22px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
         #searchCnt {
             display: none;
         }
@@ -592,43 +402,20 @@
             background-clip: border-box;
         }
 
-        .main-container {
-            display: block;
+        .product-container {
             padding: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .left-section,
-        .middle-section,
-        .right-section {
-            width: 100%;
-            margin-bottom: 25px;
+        .product-card {
+            width: 45%;
+            min-width: 280px;
         }
 
-        .product-image {
-            height: 400px;
+        .product-img {
+            height: 300px;
         }
-
-        .middle-section h1 {
-            font-size: 23px;
-        }
-
-        .offers {
-            overflow-x: auto;
-        }
-
-        .features {
-            overflow-x: auto;
-        }
-
-        .features>div {
-            min-width: 100px;
-        }
-
-        .thumbnails {
-            overflow-x: auto;
-            justify-content: flex-start;
-        }
-
     }
 </style>
 
@@ -683,199 +470,164 @@
         <p class="hideOnMob">New Relase</p>
         <p class="hideOnMob">Prime</p>
     </div>
-    <div class="main-container">
-
-        <div class="left-section">
-
-            <div class="product-image">
-                <img src="https://m.media-amazon.com/images/I/61ybeKQto8L._SY741_.jpg">
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/51FpNoZ-NDL._AC_UL165_SR165,165_.jpg">
             </div>
-
-            <p class="full-view">Click to see full view</p>
-
-            <div class="thumbnails">
-                <div class="thumb active">
-                    <img src="https://m.media-amazon.com/images/I/312ET7yMrWL._SX38_SY50_CR,0,0,38,50_.jpg">
-                </div>
-
-                <div class="thumb">
-                    <img src="https://m.media-amazon.com/images/I/31PHukdLdXL._SX38_SY50_CR,0,0,38,50_.jpg">
-                </div>
-
-                <div class="thumb">
-                    <img src="https://m.media-amazon.com/images/I/313ZS+zDBpL._SX38_SY50_CR,0,0,38,50_.jpg">
-                </div>
-
-                <div class="thumb">
-                    <img src="https://m.media-amazon.com/images/I/41PaUAGYA1L._SX38_SY50_CR,0,0,38,50_.jpg">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="middle-section">
-
-            <a href="#" class="store">
-                Visit the sony Store
-            </a>
-
-            <h1>
-                Casio Vintage A-158WA-1Q Digital Grey Dial Unisex Watch Silver Metal Strap (D011)
-            </h1>
-
-            <div class="rating">
-                <span>4.4</span>
-                <span class="stars">★★★★★</span>
-                <a href="#">(58,532)</a>
-            </div>
-
-            <p class="bought">
-                <b>9K+ bought</b> in past month
-            </p>
-
-            <hr>
-
-            <div class="price">
-                <span class="rupee">₹</span>1894
-            </div>
-
-            <p>Inclusive of all taxes</p>
-
-            <p>
-                <b>EMI starts at ₹67.</b>
-                No Cost EMI available
-                <a href="#"> EMI options</a>
-            </p>
-
-            <div class="offers-title">
-                <span>⚙</span>
-                <b>Offers</b>
-            </div>
-
-            <div class="offers">
-
-                <div class="offer-card">
-                    <h3>Cashback</h3>
-                    <p>
-                        Upto ₹56.00 cashback as Amazon Pay Balance when…
-                    </p>
-                    <a href="#">1 offer ›</a>
-                </div>
-
-                <div class="offer-card">
-                    <h3>No Cost EMI</h3>
-                    <p>
-                        Upto ₹127.51 EMI interest savings on select Credit Cards
-                    </p>
-                    <a href="#">4 offers ›</a>
-                </div>
-
-                <div class="offer-card">
-                    <h3>Bank Offer</h3>
-                    <p>
-                        Upto ₹2,000.00 discount on select Credit Cards
-                    </p>
-                    <a href="#">43 offers ›</a>
-                </div>
-
-                <div class="offer-card">
-                    <h3>Partner offers</h3>
-                    <p>
-                        Get GST invoice and save up to 18% on business purchases...
-                    </p>
-                    <a href="#">2 offer ›</a>
-                </div>
-
-            </div>
-
-            <div class="features">
-
-                <div>
-                    <div class="feature-icon">🚚</div>
-                    <p>Free Delivery</p>
-                </div>
-
-                <div>
-                    <div class="feature-icon">💳</div>
-                    <p>Pay on Delivery</p>
-                </div>
-
-                <div>
-                    <div class="feature-icon">📅</div>
-                    <p>10 days</p>
-                </div>
-
-                <div>
-                    <div class="feature-icon">🏆</div>
-                    <p>Top Brand</p>
-                </div>
-
-                <div>
-                    <div class="feature-icon">🔒</div>
-                    <p>Secure</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="right-section">
-
-            <div class="prime-box">
-                <img height="25vh" width="20%"
-                    src="https://m.media-amazon.com/images/G/31/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542734830_.png">
-
-                <p>
-                    Enjoy <b>Unlimited FREE</b> Same day/1-day delivery,
-                    Prime offers everyday and more
+            <div class="product-info">
+                <p class="title">
+                    NARWAL Freo X Ultra 2.0 Robotic Vacuum Cleaner,12,000Pa Suction, DirtSense™, Auto Mop
+                    Drying/Washing, Zero-Tangles, Maintenance-Free Base, 3D Mapping, Google Home, Alexa, Siri
+                    Compatible-2026
                 </p>
-
-                <a href="#">Join Prime &gt;&gt;</a>
-            </div>
-
-
-            <div class="buy-box">
-
-                <div class="buy-price">
-                    <span>₹</span>1894.<sup>00</sup>
+                <div class="rating">
+                    4.2
+                    <span>★★★★☆</span>
+                    <a>(846)</a>
                 </div>
-
-                <p>
-                    FREE delivery <b>satuday, 23 August.</b>
-                    <a href="#">Details</a>
-                </p>
-
-                <p class="location">
-                    📍 Delivering to Solapur 413002 -
-                    <a href="#">Update location</a>
-                </p>
-
-                <h3 class="stock">In stock</h3>
-
-                <select>
-                    <option>Quantity: 1</option>
-                    <option>Quantity: 2</option>
-                    <option>Quantity: 3</option>
-                    <option>Quantity: 4</option>
-                </select>
-                <a href="../single.cart-daay-17/single-cart13.html">
-                    <button class="cart-btn">
-                        Add to cart
-                    </button></a>
-
-                <button class="buy-btn">
-                    Buy Now
-                </button>
-
-                <div class="shipping">
-                    <p>Ships from &nbsp; <b>Amazon</b></p>
-                    <p>Sold by &nbsp; <b>Whoop India</b></p>
+                <p class="bought">1K+ bought in past month</p>
+                <div class="price">
+                    ₹44,989
+                    <span>M.R.P. <del>₹1,19,000</del></span>
+                    <b>(62% off)</b>
                 </div>
-
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI...
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
             </div>
-
         </div>
-
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/714q3qj2VJL._AC_UL165_SR165,165_.jpg">
+            </div>
+            <div class="product-info">
+                <p class="title">
+                    Ninja Combi 14-in-1 Multi-Cooker, Oven, & Air Fryer (12.5L)
+                    HyperSteam & Air Fry Technology, Cooks 3-Part Family Meals in 15 Mins, Healthy Oil-Free Cooking,
+                    Digital Display
+                </p>
+                <div class="rating">
+                    4.0
+                    <span>★★★★☆</span>
+                    <a>(1,137)</a>
+                </div>
+                <p class="bought">500+ bought in past month</p>
+                <div class="price">
+                    ₹24,699
+                    <span>M.R.P. <del>₹29,999</del></span>
+                    <b>(18% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/81Aq51OuQ2L._AC_UL165_SR165,165_.jpg">
+            </div>
+            <div class="product-info">
+                <p class="title">
+                    Reffair QX50 Plus Car Air Purifier (3rd Gen)|Advanced Photocatalytic 7 Stage Filtration|Plasma
+                    Ions|Air Quality Indicator|Suitable for SUVs & Large Vehicles, Multicolor
+                </p>
+                <div class="rating">
+                    4.2
+                    <span>★★★★☆</span>
+                    <a>(121)</a>
+                </div>
+                <p class="bought">1K+ bought in past month</p>
+                <div class="price">
+                    ₹7,574
+                    <span>M.R.P. <del>₹15,000</del></span>
+                    <b>(50% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Sat, 15 Aug</b><br>
+                    on first order
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/51CdaVfdy-L._AC_UL165_SR165,165_.jpg">
+            </div>
+            <div class="product-info">
+                <p class="title">
+                    ECOVACS Original Accessory Dust Bag (Pack of 3) for DEEBOT T50 Pro Omni | T80 Omni | X8 Pro Omni |
+                    N50 Pro Omni Station only (Not Compatible with Any Other Model)
+                </p>
+                <div class="rating">
+                    4.7
+                    <span>★★★★☆</span>
+                    <a>(126)</a>
+                </div>
+                <p class="bought">2K+ bought in past month</p>
+                <div class="price">
+                    ₹2,499
+                    <span>M.R.P. <del>₹3,995</del></span>
+                    <b>(38% off)</b>
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <span class="best-seller">Best seller</span>
+            <div class="product-img">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/61bXGHeYuhL._AC_UL165_SR165,165_.jpg">
+            </div>
+            <div class="product-info">
+                <p class="title">
+                    Dyson V15 Detect Cordless Vacuum Cleaner|2 Yr Warranty incl Accidental Damage Protection|
+                    Illumination for Hidden dust|Senses dust Levels & Auto adjusts Suction|240 Airwatts,0.77L bin,60
+                    mins runtime
+                </p>
+                <div class="rating">
+                    4.3
+                    <span>★★★★☆</span>
+                    <a>(51)</a>
+                </div>
+                <p class="bought">1K+ bought in past month</p>
+                <div class="deal">
+                    Freedom Sale Mega Deal
+                </div>
+                <div class="price">
+                    ₹65,900
+                    <!-- <span>M.R.P. <del>₹14,999</del></span>
+                    <b>(92% off)</b> -->
+                </div>
+                <p class="cashback">
+                    Up to 5% back with Amazon Pay ICICI
+                </p>
+                <p class="delivery">
+                    FREE delivery <b>Fri, 14 Aug</b><br>
+                    Or fastest delivery <b>Tomorrow, 12 Aug</b>
+                </p>
+                <button>Add to cart</button>
+            </div>
+        </div>
     </div>
     <footer>
         <div class="footer-top">

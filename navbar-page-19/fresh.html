@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Fresh Clone</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    #navbarCnt {
+        border: 2px solid black;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: #000000;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #logoCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+    }
+
+    #searchCnt {
+        /* border: 2px solid blue; */
+        width: 50%;
+        height: 74%;
+        display: flex;
+    }
+
+    #profileCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    #profileCnt img {
+        width: 120%;
+
+    }
+
+
+    .imgStyle {
+        height: 100%;
+        width: 44%;
+    }
+
+    #catCnt {
+        /* border: 2px solid yellow; */
+        width: 8%;
+    }
+
+    #catCnt select {
+        background-color: #e6e6e6;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border: none;
+    }
+
+    #seaCnt {
+        /* border: 2px solid yellow; */
+        width: 80%;
+    }
+
+    #seaCnt input {
+        padding-left: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    #subCnt {
+        width: 8%;
+        background-color: #febd6a;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #subCnt span {
+        color: black;
+    }
+
+    .wh-100 {
+        width: 100%;
+        height: 100%;
+    }
+
+    #naviCnt {
+        height: 40px;
+        background-color: #242f3e;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #naviCnt p {
+        font-size: 14px;
+    }
+
+    body {
+        background: #f3f3f3;
+    }
+
+    .topbar {
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+        background: white;
+        border-top: 5px solid green;
+    }
+
+    .logo {
+        font-size: 42px;
+        font-weight: bold;
+        color: #52a52c;
+        margin-right: 40px;
+    }
+
+    nav {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #111;
+        font-size: 17px;
+    }
+
+    .banner {
+        width: 90%;
+        margin: 20px auto;
+        background: #dff7df;
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 48px;
+    }
+
+    .banner span {
+        color: #4caf50;
+    }
+
+    .offer-box {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 220px;
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .card img {
+        width: 110px;
+    }
+
+    .card h3 {
+        margin-top: 15px;
+    }
+
+    button {
+        background: #ffd814;
+        padding: 15px 45px;
+        border: none;
+        border-radius: 40px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .grocery {
+        width: 95%;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+    }
+
+    .grocery h2 {
+        font-size: 52px;
+        margin-bottom: 40px;
+    }
+
+    .items {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        text-align: center;
+        width: 180px;
+    }
+
+    .item img {
+        width: 160px;
+        height: 200px;
+        background: #dff7df;
+        /* border-radius: 50%; */
+        /* padding: 20px; */
+    }
+
+    .item p {
+        font-size: 28px;
+        margin-top: 15px;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .footer-top {
+        background: #232f3e;
+        color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 60px 8%;
+        flex-wrap: wrap;
+    }
+
+    .footer-column {
+        width: 220px;
+        margin-bottom: 30px;
+    }
+
+    .footer-column h3 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .footer-column a {
+        display: block;
+        color: #ddd;
+        text-decoration: none;
+        margin: 12px 0;
+        font-size: 18px;
+    }
+
+    .footer-column a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-middle {
+        background: #232f3e;
+        border-top: 1px solid #3a4553;
+        padding: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        color: #fff;
+        font-size: 45px;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .buttons button {
+        background: transparent;
+        color: #ddd;
+        border: 1px solid #848688;
+        padding: 12px 22px;
+        font-size: 17px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .buttons button i {
+        margin-right: 8px;
+    }
+
+    .footer-bottom {
+        background: #131A22;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 70px;
+        padding: 45px 8%;
+    }
+
+    .bottom-box {
+        width: 170px;
+    }
+
+    .bottom-box h4 {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .bottom-box p {
+        color: #999;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    @media(max-width:768px) {
+
+        .topbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .banner h1 {
+            font-size: 30px;
+        }
+
+        .offer-box {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .items {
+            justify-content: center;
+        }
+
+        .item {
+            width: 45%;
+        }
+
+        .item img {
+            width: 140px;
+            height: 140px;
+        }
+
+        .item p {
+            font-size: 20px;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="navbarCnt">
+        <div id="logoCnt">
+            <img class="imgStyle"
+                src="https://www.thesun.co.uk/wp-content/uploads/2022/02/Amazon-Logo-1024x426-1.png?strip=all&w=960" />
+        </div>
+        <div id="searchCnt">
+            <div id="catCnt">
+                <select class="wh-100">
+                    <option>All</option>
+                    <option>mobile</option>
+                    <option>watch</option>
+                    <option>laptop</option>
+                </select>
+            </div>
+            <div id="seaCnt">
+                <input class="wh-100" placeholder="Search Amazon.in" />
+            </div>
+            <div id="subCnt">
+                <span class="material-symbols-outlined"> search </span>
+            </div>
+        </div>
+        <div id="profileCnt">
+            <a href="loging-page.html">
+                <img src="../profile.com.svg" alt="About">
+            </a>
+            <a href="cart.html">
+                <img src="../cart.svg" alt="About">
+            </a>
+        </div>
+    </div>
+    <div id="naviCnt">
+        <p>All</p>
+        <p>Fresh</p>
+        <p>Mx Player</p>
+        <p>Sell</p>
+        <p>Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+        <p class="hideOnMob">All</p>
+        <p class="hideOnMob">Fresh</p>
+        <p class="hideOnMob">Mx Player</p>
+        <p class="hideOnMob">Sell</p>
+        <p class="hideOnMob">Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+    </div>
+    <header class="topbar">
+        <div class="logo">fresh</div>
+
+        <nav>
+            <a href="#">Past Purchases</a>
+            <a href="#">Deals</a>
+            <a href="#">Atta, rice & grains</a>
+            <a href="#">Dal & pulses</a>
+            <a href="#">Oil & ghee</a>
+            <a href="#">Tea & coffee</a>
+            <a href="#">Chips & biscuits</a>
+            <a href="#">Bath & body</a>
+            <a href="#">Baby care</a>
+        </nav>
+    </header>
+
+    <div class="offer-box">
+        <div><img src="https://m.media-amazon.com/images/G/31/img18/Fresh/Hero_Slider/SVD/6feb/1_6.jpg"></div>
+    </div>
+
+    <section class="grocery">
+
+        <h2>Groceries & Food</h2>
+
+        <div class="items">
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Atta_Rice__grains.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Dals__Pulses.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Oil__Ghee.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/Apr25/Tea_coffee__drink_mixes_BAU.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Juices__cold_drinks.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Sauces__spreads.jpg">
+            </div>
+
+        </div>
+        <div class="items">
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Sauces__spreads.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Noodles__pasta.jpg">
+            </div>
+
+            <div class="item">
+                <img
+                    src="https://m.media-amazon.com/images/G/31/img18/Fresh/Hero_Slider/JanART/CSR/SBS/SBSCSR/SBS/V1/V2/Chips__biscuits.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Chocolates__sweets.jpg">
+            </div>
+
+            <div class="item">
+                <img
+                    src="https://m.media-amazon.com/images/G/31/img18/Fresh/Hero_Slider/JanART/CSR/SBS/SBSCSR/SBS/V1/V2/Indian_Snacks_2.jpg">
+            </div>
+
+            <div class="item">
+                <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/Bath__body.jpg">
+            </div>
+
+        </div>
+
+    </section>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <a href="#">About Amazon</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Amazon Science</a>
+            </div>
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <a href="#">Sell on Amazon</a>
+                <a href="#">Sell under Amazon Accelerator</a>
+                <a href="#">Protect and Build Your Brand</a>
+                <a href="#">Amazon Global Selling</a>
+                <a href="#">Supply to Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Fulfilment by Amazon</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Amazon Pay on Merchants</a>
+            </div>
+            <div class="footer-column">
+                <h3>Let Us Help You</h3>
+                <a href="#">Your Account</a>
+                <a href="#">Returns Centre</a>
+                <a href="#">Recalls and Product Safety Alerts</a>
+                <a href="#">100% Purchase Protection</a>
+                <a href="#">Amazon App Download</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="logo">
+                amazon
+            </div>
+            <div class="buttons">
+                <button>
+                    <i class="fa-solid fa-globe"></i>
+                    English
+                    <i class="fa-solid fa-sort"></i>
+                </button>
+                <button>
+                    IN India
+                </button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="bottom-box">
+                <h4>AbeBooks</h4>
+                <p>Books, art</p>
+                <p>& collectibles</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Web Services</h4>
+                <p>Scalable Cloud</p>
+                <p>Computing Services</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Audible</h4>
+                <p>Download</p>
+                <p>Audio Books</p>
+            </div>
+            <div class="bottom-box">
+                <h4>IMDb</h4>
+                <p>Movies, TV</p>
+                <p>& Celebrities</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Shopbop</h4>
+                <p>Designer</p>
+                <p>Fashion Brands</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Business</h4>
+                <p>Everything For</p>
+                <p>Your Business</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Music</h4>
+                <p>Stream Millions of Songs</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

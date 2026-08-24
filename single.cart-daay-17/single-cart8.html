@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -445,6 +445,104 @@
         background-color: #f7ca00;
     }
 
+    footer {
+        width: 100%;
+    }
+
+    .footer-top {
+        background: #232f3e;
+        color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 60px 8%;
+        flex-wrap: wrap;
+    }
+
+    .footer-column {
+        width: 220px;
+        margin-bottom: 30px;
+    }
+
+    .footer-column h3 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .footer-column a {
+        display: block;
+        color: #ddd;
+        text-decoration: none;
+        margin: 12px 0;
+        font-size: 18px;
+    }
+
+    .footer-column a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-middle {
+        background: #232f3e;
+        border-top: 1px solid #3a4553;
+        padding: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        color: #fff;
+        font-size: 45px;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .buttons button {
+        background: transparent;
+        color: #ddd;
+        border: 1px solid #848688;
+        padding: 12px 22px;
+        font-size: 17px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .buttons button i {
+        margin-right: 8px;
+    }
+
+    .footer-bottom {
+        background: #131A22;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 70px;
+        padding: 45px 8%;
+    }
+
+    .bottom-box {
+        width: 170px;
+    }
+
+    .bottom-box h4 {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .bottom-box p {
+        color: #999;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
 
     @media (max-width: 768px) {
         #searchCnt {
@@ -752,20 +850,19 @@
                 <h1>Shopping Cart</h1>
                 <span>Price</span>
             </div>
-            
+
 
             <div class="product">
 
                 <div class="product-image">
-                    <img src="https://m.media-amazon.com/images/I/41tp0JPPlmL._SX522_.jpg"
-                        alt="Robot Vacuum Cleaner">
+                    <img src="https://m.media-amazon.com/images/I/41JACWT-wWL._SX522_.jpg" alt="Robot Vacuum Cleaner">
                 </div>
 
                 <div class="product-details">
                     <h2>
-                        ECOVACS Deebot N50 Pro Omni 2 in 1 Robotic Vacuum Cleaner &
-                        Mop, 2026 New Launch 25000 Pa Suction, Self-Emptying
-                        Omni-Station, Zerotangle 3.0, Hot Air-Dryin...
+                        Sony WH-CH520 Wireless Bluetooth Headphones On Ear with Mic, Up to 50Hrs Battery, Quick Charge,
+                        DSEE
+                        Upscale, Multipoint Connectivity, Voice Assistant, Customized EQ-Blue Model : YY2958
                     </h2>
 
                     <p class="stock">In stock</p>
@@ -780,11 +877,6 @@
                         This will be a gift
                         <a href="#">Learn more</a>
                     </div>
-
-                    <p class="colour">
-                        <b>Colour:</b> N50 PRO OMNI
-                    </p>
-
                     <div class="actions">
 
                         <div class="quantity">
@@ -801,15 +893,15 @@
                 </div>
 
                 <div class="price">
-                    <strong>₹9,890.00</strong>
-                    <p>M.R.P.: <del>₹12,999.00</del></p>
+                    <strong>₹4,490.00</strong>
+                    <p>M.R.P.: <del>₹5,999.00</del></p>
                 </div>
 
             </div>
 
             <div class="subtotal">
                 Subtotal (1 items):
-                <b>₹9,890.00</b>
+                <b>₹4,490.00</b>
             </div>
 
         </div>
@@ -831,7 +923,7 @@
 
                 <h2>
                     Subtotal (1 items):
-                    <b>₹9,890.00</b>
+                    <b>₹4,490.00</b>
                 </h2>
 
                 <label class="gift-check">
@@ -839,9 +931,9 @@
                     This order contains a gift
                 </label>
                 <a href="./payment.html">
-                <button class="buy-button">
-                    Proceed to Buy
-                </button></a>
+                    <button class="buy-button">
+                        Proceed to Buy
+                    </button></a>
 
                 <div class="emi">
                     <b>EMI Available</b>
@@ -850,62 +942,59 @@
 
             </div>
 
-                <div class="recommended-product">
+            <div class="recommended-product">
 
-                    <img src="https://m.media-amazon.com/images/I/41tp0JPPlmL._SX522_.jpg"
-                        alt="Amazfit Watch">
+                <img src="https://m.media-amazon.com/images/I/41tp0JPPlmL._SX522_.jpg" alt="Amazfit Watch">
 
-                    <div>
-                        <a href="#">Amazfit Active 2...</a>
+                <div>
+                    <a href="#">Amazfit Active 2...</a>
 
-                        <p class="rating">
-                            ★★★★☆ <span>1,453</span>
-                        </p>
+                    <p class="rating">
+                        ★★★★☆ <span>1,453</span>
+                    </p>
 
-                        <p>
-                            <span class="red"></span>
-                            <strong>₹12,999</strong>
-                        </p>
+                    <p>
+                        <span class="red"></span>
+                        <strong>₹12,999</strong>
+                    </p>
 
-                        <small>M.R.P.: <del>₹24,999.00</del></small>
+                    <small>M.R.P.: <del>₹24,999.00</del></small>
 
-                        <p>
-                            Get it by <b>Wednesday,<br>
-                                August 19</b>
-                        </p>
+                    <p>
+                        Get it by <b>Wednesday,<br>
+                            August 19</b>
+                    </p>
 
-                        <p>FREE Delivery by Amazon</p>
+                    <p>FREE Delivery by Amazon</p>
 
-                        <button class="add-cart">
-                            Add to cart
-                        </button>
-                    </div>
-
+                    <button class="add-cart">
+                        Add to cart
+                    </button>
                 </div>
 
+            </div>
 
-                <div class="recommended-product">
 
-                    <img src="https://images-eu.ssl-images-amazon.com/images/I/61eLhGc40TL._AC_UL200_SR200,200_.jpg"
-                        alt="Amazfit Watch">
+            <div class="recommended-product">
 
-                    <div>
-                        <a href="#">Amazfit Active...</a>
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/61eLhGc40TL._AC_UL200_SR200,200_.jpg"
+                    alt="Amazfit Watch">
 
-                        <p class="rating">
-                            ★★★★☆ <span>1,234</span>
-                        </p>
+                <div>
+                    <a href="#">Amazfit Active...</a>
 
-                        <p>
-                            <span class="red">-45%</span>
-                            <strong>₹12,999</strong>
-                        </p>
+                    <p class="rating">
+                        ★★★★☆ <span>1,234</span>
+                    </p>
 
-                        <button class="add-cart">
-                            Add to cart
-                        </button>
-                    </div>
+                    <p>
+                        <span class="red">-45%</span>
+                        <strong>₹12,999</strong>
+                    </p>
 
+                    <button class="add-cart">
+                        Add to cart
+                    </button>
                 </div>
 
             </div>
@@ -914,6 +1003,96 @@
 
     </div>
 
+    </div>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <a href="#">About Amazon</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Amazon Science</a>
+            </div>
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <a href="#">Sell on Amazon</a>
+                <a href="#">Sell under Amazon Accelerator</a>
+                <a href="#">Protect and Build Your Brand</a>
+                <a href="#">Amazon Global Selling</a>
+                <a href="#">Supply to Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Fulfilment by Amazon</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Amazon Pay on Merchants</a>
+            </div>
+            <div class="footer-column">
+                <h3>Let Us Help You</h3>
+                <a href="#">Your Account</a>
+                <a href="#">Returns Centre</a>
+                <a href="#">Recalls and Product Safety Alerts</a>
+                <a href="#">100% Purchase Protection</a>
+                <a href="#">Amazon App Download</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="logo">
+                amazon
+            </div>
+            <div class="buttons">
+                <button>
+                    <i class="fa-solid fa-globe"></i>
+                    English
+                    <i class="fa-solid fa-sort"></i>
+                </button>
+                <button>
+                    IN India
+                </button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="bottom-box">
+                <h4>AbeBooks</h4>
+                <p>Books, art</p>
+                <p>& collectibles</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Web Services</h4>
+                <p>Scalable Cloud</p>
+                <p>Computing Services</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Audible</h4>
+                <p>Download</p>
+                <p>Audio Books</p>
+            </div>
+            <div class="bottom-box">
+                <h4>IMDb</h4>
+                <p>Movies, TV</p>
+                <p>& Celebrities</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Shopbop</h4>
+                <p>Designer</p>
+                <p>Fashion Brands</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Business</h4>
+                <p>Everything For</p>
+                <p>Your Business</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Music</h4>
+                <p>Stream Millions of Songs</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

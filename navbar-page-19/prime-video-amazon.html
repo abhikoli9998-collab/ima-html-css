@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime video </title>
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: white;
+        min-height: 100vh;
+    }
+
+    .navbar {
+        height: 70px;
+        background: #0f171e;
+        display: flex;
+        align-items: center;
+        padding: 0 45px;
+        gap: 35px;
+    }
+
+    .logo {
+        color: #00a8e1;
+        font-size: 25px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex: 1;
+    }
+
+    nav a {
+        color: #ddd;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    .line {
+        height: 25px;
+        width: 1px;
+        background: #777;
+    }
+
+    .right-menu {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        color: #ddd;
+        white-space: nowrap;
+    }
+
+    .search {
+        font-size: 30px;
+    }
+
+    .user {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #777;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ddd;
+    }
+
+    .join {
+        background: #00a8e1;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .main {
+        min-height: calc(100vh - 170px);
+        display: flex;
+        align-items: center;
+        padding: 60px 8%;
+        background:
+            linear-gradient(90deg, #000 25%, rgba(0, 0, 0, .85) 55%, rgba(0, 0, 0, .3)),
+            url("https://m.media-amazon.com/images/G/31/AmazonVideo/2019/MLP.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .left {
+        max-width: 650px;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #ddd;
+        margin-bottom: 30px;
+    }
+
+    .plan {
+        display: block;
+        width: 330px;
+        background: #00a8e1;
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        margin-top: 18px;
+        border-radius: 3px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .plan:hover {
+        background: #159bc8;
+    }
+
+    .month {
+        margin-top: 7px;
+        color: #aaa;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .compare {
+        background: transparent;
+        border: 1px solid #aaa;
+    }
+
+    .compare:hover {
+        background: #222;
+    }
+    footer {
+        height: 100px;
+        background: #0f171e;
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer img {
+        width: 100px;
+        margin-bottom: 8px;
+    }
+
+    footer h4 {
+        color: #00a8e1;
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    footer h5 {
+        color: #777;
+        font-size: 11px;
+        font-weight: normal;
+        margin-top: 8px;
+    }
+
+ 
+
+    @media (max-width: 700px) {
+
+        .navbar {
+            height: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+        }
+
+        .logo {
+            text-align: center;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            width: 100%;
+            gap: 20px;
+            padding: 8px 0;
+            white-space: nowrap;
+        }
+
+        nav a {
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .line {
+            flex-shrink: 0;
+        }
+
+        .right-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+        }
+
+        .main {
+            min-height: 700px;
+            padding: 50px 25px;
+            display: flex;
+            align-items: flex-start;
+            background: #000;
+        }
+
+        .left {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        h1 {
+            font-size: 38px;
+            line-height: 1.2;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .plan {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 18px;
+            padding: 15px;
+        }
+
+        .month {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            height: auto;
+            padding: 25px 15px;
+        }
+
+        footer img {
+            width: 110px;
+        }
+
+        footer h4 {
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        footer h5 {
+            font-size: 10px;
+        }
+    }
+</style>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            prime video
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Free to me</a>
+            <a href="#">Movies</a>
+            <a href="#">TV shows</a>
+            <a href="#">Live TV</a>
+            <span class="line"></span>
+            <a href="#">▦ Subscriptions</a>
+        </nav>
+        <div class="right-menu">
+            <span class="search">⌕</span>
+            <span>EN⌄</span>
+            <span>⠿</span>
+            <span class="user">●</span>
+            <button class="join">Join Prime</button>
+        </div>
+    </header>
+    <main class="main">
+        <section class="left">
+            <h1>Welcome to Prime Video</h1>
+            <p class="description">
+                Watch the latest movies, TV shows, and award-winning Amazon Originals
+            </p>
+            <button class="plan">
+                Join Prime Lite at ₹799/year
+            </button>
+            <p class="month">
+                Effectively ₹67/month
+            </p>
+            <button class="plan">
+                Join Prime Annual at ₹1499/year
+            </button>
+            <p class="month">
+                Effectively ₹125/month
+            </p>
+            <button class="plan">
+                Join Prime Monthly at ₹299/month
+            </button>
+            <button class="plan compare">
+                Compare All Plans
+            </button>
+
+        </section>
+    </main>
+</body>
+<footer>
+    <img src="https://m.media-amazon.com/images/G/01/digital/video/acquisition/logo/pv_logo_white._CB548637580_.png"
+        alt="prime video logo">
+    <h4 style="color: #00a8e1;">Terms and Privacy Notice Send us feedback Help</h4>
+    <br>
+    <h5>© 1996-2026, Amazon.com, Inc. or its affiliate</h5>
+</footer>
+
+</html>
