@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Bestsellers</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #navbarCnt {
+        border: 2px solid black;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: #000000;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #logoCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+    }
+
+    #searchCnt {
+        /* border: 2px solid blue; */
+        width: 50%;
+        height: 74%;
+        display: flex;
+    }
+
+    #profileCnt {
+        /* border: 2px solid blue; */
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    #profileCnt img {
+        width: 120%;
+
+    }
+
+
+    .imgStyle {
+        height: 100%;
+        width: 44%;
+    }
+
+    #catCnt {
+        /* border: 2px solid yellow; */
+        width: 8%;
+    }
+
+    #catCnt select {
+        background-color: #e6e6e6;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border: none;
+    }
+
+    #seaCnt {
+        /* border: 2px solid yellow; */
+        width: 80%;
+    }
+
+    #seaCnt input {
+        padding-left: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    #subCnt {
+        width: 8%;
+        background-color: #febd6a;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #subCnt span {
+        color: black;
+    }
+
+    .wh-100 {
+        width: 100%;
+        height: 100%;
+    }
+
+    #naviCnt {
+        height: 40px;
+        background-color: #242f3e;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #naviCnt p {
+        font-size: 14px;
+    }
+
+    body {
+        margin-top: 4%;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #111;
+        background-color: white;
+    }
+
+    .sidebar {
+        width: 315px;
+        min-width: 315px;
+        padding: 10px 28px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .sidebar h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        margin-top: 0;
+    }
+
+    .sidebar h3:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    .radio,
+    .check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 14px 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .radio input {
+        width: 21px;
+        height: 21px;
+        accent-color: #2878bd;
+    }
+
+    .check input {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .see-more {
+        display: block;
+        color: #1769aa;
+        font-weight: bold;
+        margin: 12px 0;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .stars {
+        color: #ff6500;
+        font-size: 20px;
+    }
+
+    .price-range {
+        position: relative;
+        width: 270px;
+        height: 50px;
+        margin-top: 18px;
+    }
+
+    .price-range .line {
+        position: absolute;
+        width: 250px;
+        height: 8px;
+        background: #2878bd;
+        top: 20px;
+        left: 10px;
+    }
+
+    .circle {
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: white;
+        border: 8px solid #2878bd;
+        top: 7px;
+    }
+
+    .circle.left {
+        left: 0;
+    }
+
+    .circle.right {
+        right: 0;
+    }
+
+
+    /* ================= PRODUCTS ================= */
+
+    .products {
+        flex: 1;
+        display: grid;
+
+        /* 6 products like screenshot */
+        grid-template-columns: repeat(6, minmax(170px, 1fr));
+
+        column-gap: 28px;
+        row-gap: 40px;
+
+        padding: 18px 25px 30px 0;
+
+        overflow: hidden;
+    }
+
+    .product {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    /* IMAGE */
+
+    .image-box {
+        position: relative;
+        width: 100%;
+        height: 215px;
+
+        background: #f7f7f7;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 5px;
+
+        margin-bottom: 8px;
+    }
+
+    .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+    }
+
+    /* PLUS BUTTON */
+
+    .plus {
+        position: absolute;
+
+        right: 8px;
+        bottom: 8px;
+
+        width: 40px;
+        height: 40px;
+
+        border: none;
+        border-radius: 50%;
+
+        background: #ffd814;
+
+        color: #111;
+
+        font-size: 28px;
+        line-height: 40px;
+
+        cursor: pointer;
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    }
+
+    .plus:hover {
+        background: #f7ca00;
+    }
+
+
+    /* DEAL */
+
+    .deal {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        color: #d00000;
+
+        font-size: 14px;
+        font-weight: bold;
+
+        white-space: nowrap;
+    }
+
+    .deal span {
+        background: #cc0c39;
+        color: white;
+
+        padding: 7px 8px;
+
+        border-radius: 4px;
+    }
+
+
+    /* PRICE */
+
+    .price {
+        font-size: 21px;
+        font-weight: 500;
+
+        margin-top: 8px;
+
+        white-space: nowrap;
+    }
+
+    .price sup {
+        font-size: 12px;
+        vertical-align: top;
+    }
+
+    .price del {
+        color: #666;
+        font-size: 13px;
+        margin-left: 4px;
+    }
+
+
+    /* TITLE */
+
+    .title {
+        font-size: 16px;
+        line-height: 22px;
+
+        margin-top: 8px;
+
+        height: 45px;
+
+        overflow: hidden;
+    }
+
+
+    /* RATING */
+
+    .rating {
+        margin-top: 7px;
+
+        font-size: 14px;
+    }
+
+    .rating span {
+        color: #ff6500;
+        font-size: 17px;
+    }
+
+    .rating a {
+        color: #1769aa;
+        text-decoration: none;
+        margin-left: 4px;
+    }
+
+
+    /* SHOP */
+
+    .shop,
+    .more {
+        display: block;
+
+        color: #1769aa;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        margin-top: 10px;
+    }
+
+    .shop:hover,
+    .more:hover {
+        color: #c7511f;
+        text-decoration: underline;
+    }
+
+
+    /* COLORS */
+
+    .colors {
+        display: flex;
+        gap: 8px;
+        margin-top: 9px;
+    }
+
+    .colors i {
+        display: block;
+
+        width: 25px;
+        height: 25px;
+
+        border-radius: 50%;
+
+        background: #b9c3bd;
+
+        border: 1px solid #555;
+    }
+
+    .colors i:nth-child(2) {
+        background: #4b568e;
+    }
+
+    .colors i:nth-child(3) {
+        background: #999;
+    }
+
+
+    /* COUPON */
+
+    .coupon {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .footer-top {
+        background: #232f3e;
+        color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 60px 8%;
+        flex-wrap: wrap;
+    }
+
+    .footer-column {
+        width: 220px;
+        margin-bottom: 30px;
+    }
+
+    .footer-column h3 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .footer-column a {
+        display: block;
+        color: #ddd;
+        text-decoration: none;
+        margin: 12px 0;
+        font-size: 18px;
+    }
+
+    .footer-column a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-middle {
+        background: #232f3e;
+        border-top: 1px solid #3a4553;
+        padding: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        color: #fff;
+        font-size: 45px;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .buttons button {
+        background: transparent;
+        color: #ddd;
+        border: 1px solid #848688;
+        padding: 12px 22px;
+        font-size: 17px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .buttons button i {
+        margin-right: 8px;
+    }
+
+    .footer-bottom {
+        background: #131A22;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 70px;
+        padding: 45px 8%;
+    }
+
+    .bottom-box {
+        width: 170px;
+    }
+
+    .bottom-box h4 {
+        color: #fff;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .bottom-box p {
+        color: #999;
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    @media (max-width: 700px) {
+
+        #logoCnt {
+            width: 30%;
+        }
+
+        .imgStyle {
+            width: 100%;
+        }
+
+        #profileCnt img {
+            width: 120%;
+        }
+
+        #navbarCnt {
+            justify-content: space-between;
+        }
+
+        .hideOnMob {
+            display: none;
+        }
+
+        #sliderCnt {
+            height: calc(52vh);
+            background-size: contain;
+            background-clip: border-box;
+        }
+
+        .topbar {
+            margin-top: 25%;
+        }
+
+        .top-nav {
+            height: 52px;
+            gap: 5px;
+            padding-left: 8px;
+        }
+
+        .top-nav a {
+            font-size: 14px;
+            padding: 18px 10px 13px;
+        }
+
+        .heading {
+            padding: 25px 15px 22px;
+        }
+
+        .heading h1 {
+            font-size: 27px;
+        }
+
+        .heading p {
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        .sidebar {
+            display: none;
+        }
+
+        .products-section {
+            width: 100%;
+            padding: 0 14px;
+        }
+
+        .section-title {
+            flex-wrap: wrap;
+
+            margin-bottom: 20px;
+
+            gap: 5px;
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+        }
+
+        .section-title a {
+            font-size: 14px;
+        }
+
+        .page-number {
+            width: 100%;
+            margin-left: 0;
+
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+        .products {
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            column-gap: 20px;
+            row-gap: 35px;
+        }
+
+
+        .product-card {
+            width: 100%;
+        }
+
+        .rank {
+            width: 45px;
+            height: 29px;
+
+            font-size: 14px;
+
+            padding: 7px 8px;
+
+            margin-bottom: 15px;
+        }
+
+        .image-box {
+            height: 170px;
+        }
+
+        .image-box img {
+            max-width: 100%;
+        }
+
+        .watch {
+            width: 35px;
+            height: 35px;
+
+            right: 0;
+
+            top: 180px;
+
+            font-size: 14px;
+        }
+
+        .product-card h3 {
+            font-size: 14px;
+            line-height: 20px;
+
+            -webkit-line-clamp: 4;
+        }
+
+        .rating {
+            font-size: 15px;
+        }
+
+        .rating span {
+            font-size: 12px;
+        }
+
+        .price {
+            font-size: 16px;
+        }
+
+        .second-title {
+            margin-top: 35px;
+        }
+
+        .second-title h2 {
+            font-size: 21px;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="navbarCnt">
+        <div id="logoCnt">
+            <img class="imgStyle"
+                src="https://www.thesun.co.uk/wp-content/uploads/2022/02/Amazon-Logo-1024x426-1.png?strip=all&w=960" />
+        </div>
+        <div id="searchCnt">
+            <!-- <div id="catCnt">
+                <select class="wh-100">
+                    <option>All</option>
+                    <option>mobile</option>
+                    <option>watch</option>
+                    <option>laptop</option>
+                </select>
+            </div>
+            <div id="seaCnt">
+                <input class="wh-100" placeholder="Search Amazon.in" />
+            </div>
+            <div id="subCnt">
+                <span class="material-symbols-outlined"> search </span>
+            </div> -->
+        </div>
+        <div id="profileCnt">
+            <a href="loging-page.html">
+                <img src="../profile.com.svg" alt="About">
+            </a>
+            <a href="cart.html">
+                <img src="../cart.svg" alt="About">
+            </a>
+        </div>
+    </div>
+    <div id="naviCnt">
+        <p>All</p>
+        <p>Fresh</p>
+        <p>Mx Player</p>
+        <p>Sell</p>
+        <p>Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+        <p class="hideOnMob">All</p>
+        <p class="hideOnMob">Fresh</p>
+        <p class="hideOnMob">Mx Player</p>
+        <p class="hideOnMob">Sell</p>
+        <p class="hideOnMob">Best Seller</p>
+        <p class="hideOnMob">Today's Deal</p>
+        <p class="hideOnMob">Mobile</p>
+        <p class="hideOnMob">New Relase</p>
+        <p class="hideOnMob">Prime</p>
+    </div>
+    <header class="topbar">
+        <div class="logo">fresh</div>
+    </header>
+    <main class="products">
+        <div class="product">
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+            <div class="deal">
+                <span>17% off</span>
+                Limited time deal
+            </div>
+            <div class="price">
+                ₹82,990<sup>00</sup>
+                <del>M.R.P. ₹99,990.00</del>
+            </div>
+            <p class="title">
+                ASUS Vivobook S14, Intel Core Ultra 5 225H,
+                Intel iGPU,16GB...
+            </p>
+            <div class="rating">
+                4.2 <span>★★★★☆</span>
+                <a>(20)</a>
+            </div>
+            <a class="shop">Shop ASUS deals</a>
+        </div>
+        <div class="product">
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+            <div class="deal">
+                <span>43% off</span>
+                Limited time deal
+            </div>
+            <div class="price">
+                ₹15,999<sup>00</sup>
+                <del>M.R.P. ₹27,999.00</del>
+            </div>
+            <p class="title">
+                Tecno POP X 5G (Ripple Green, 4GB+128GB)
+                | 6500mAh+45...
+            </p>
+            <div class="rating">
+                3.2 <span>★★★☆☆</span>
+                <a>(23)</a>
+            </div>
+            <div class="colors">
+                <i></i>
+                <i></i>
+            </div>
+            <a class="shop">Shop Tecno deals</a>
+        </div>
+        <div class="product">
+            <div class="image-box">
+                <img
+                    src="https://m.media-amazon.com/images/I/814SDu24dnL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte">
+                <button class="plus">+</button>
+            </div>
+            <div class="deal">
+                <span>3% off</span>
+                Limited time deal
+            </div>
+            <div class="price">
+                ₹9,699<sup>00</sup>
+                <del>M.R.P. ₹9,999.00</del>
+            </div>
+            <p class="title">
+                Seagate Expansion 1TB External HDD -
+                USB 3.0 for W...
+            </p>
+            <div class="rating">
+                4.4 <span>★★★★★</span>
+                <a>(33.3K)</a>
+            </div>
+            <a class="shop">Shop Seagate deals</a>
+        </div>
+        <div class="product">
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+            <div class="deal">
+                <span>33% off</span>
+                Limited time deal
+            </div>
+            <div class="price">
+                ₹39,998<sup>00</sup>
+                <del>M.R.P. ₹59,999.00</del>
+            </div>
+            <p class="title">
+                Tecno CAMON 50 Ultra 5G
+                (Cypress Green, 8GB+256GB...
+            </p>
+            <div class="rating">
+                3.9 <span>★★★★☆</span>
+                <a>(9)</a>
+            </div>
+            <div class="colors">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <p class="coupon">
+                You pay ₹35,998.00 with coupon
+            </p>
+            <a class="shop">Shop Tecno deals</a>
+        </div>
+        <div class="product">
+            <div class="image-box">
+                <img
+                    src="https://m.media-amazon.com/images/I/71XnRvOySCL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte">
+                <button class="plus">+</button>
+            </div>
+            <div class="deal">
+                <span>20% off</span>
+                Limited time deal
+            </div>
+            <div class="price">
+                ₹71,999<sup>00</sup>
+                <del>M.R.P. ₹89,999.00</del>
+            </div>
+            <p class="title">
+                vivo V70 Elite 5G (Sand Beige,
+                12GB RAM, 256GB Storage) w...
+            </p>
+            <div class="rating">
+                4.4 <span>★★★★★</span>
+                <a>(97)</a>
+            </div>
+            <div class="colors">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <a class="shop">Shop vivo deals</a>
+        </div>
+
+        <div class="product">
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>42% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹24,999<sup>00</sup>
+                <del>M.R.P. ₹42,999.00</del>
+            </div>
+
+            <p class="title">
+                Samsung Galaxy Watch8 (40mm, LTE,
+                Graphite) with 3...
+            </p>
+
+            <div class="rating">
+                4.2 <span>★★★★☆</span>
+                <a>(381)</a>
+            </div>
+
+            <a class="more">+3 colours/patterns</a>
+
+            <a class="shop">Shop Samsung deals</a>
+
+        </div>
+
+        <div class="product">
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>58% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹1,249<sup>00</sup>
+                <del>M.R.P. ₹2,999.00</del>
+            </div>
+
+            <p class="title">
+                Amazon Basics 3-Way Foldable Cloth
+                Drying Stand...
+            </p>
+
+            <div class="rating">
+                4.1 <span>★★★★☆</span>
+                <a>(125)</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1598965402089-897ce52e8355?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>9% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹67,999<sup>00</sup>
+                <del>M.R.P. ₹74,999.00</del>
+            </div>
+
+            <p class="title">
+                Oppo Reno15 Pro 5G (Cocoa Brown,
+                12GB RAM, 256GB St...
+            </p>
+
+            <div class="rating">
+                4.3 <span>★★★★☆</span>
+                <a>(51)</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="image-box">
+                <img
+                    src="https://m.media-amazon.com/images/I/61AzuZrAKYL._AC_SF226,226_QL85_.jpg?aicid=discounts-widgets-horizonte">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>33% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹765<sup>00</sup>
+                <del>M.R.P. ₹1,149.00</del>
+            </div>
+
+            <p class="title">
+                Pampers Premium Care Pant Style Baby
+                Diapers XXL 30 C...
+            </p>
+
+            <div class="rating">
+                4.5 <span>★★★★★</span>
+                <a>(8,421)</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>31% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹1,540<sup>00</sup>
+                <del>M.R.P. ₹2,223.00</del>
+            </div>
+
+            <p class="title">
+                Wakefit Waterproof Bamboo Terry
+                Mattress Protector...
+            </p>
+
+            <div class="rating">
+                4.2 <span>★★★★☆</span>
+                <a>(213)</a>
+            </div>
+
+        </div>
+
+        <div class="product">
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1602523961358-f9f03dd557db?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>65% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹159<sup>00</sup>
+                <del>M.R.P. ₹449.00</del>
+            </div>
+
+            <p class="title">
+                DeoDad Designer Ganesha Rakhi Set of
+                2 for Brother wi...
+            </p>
+
+            <div class="rating">
+                4.4 <span>★★★★★</span>
+                <a>(87)</a>
+            </div>
+
+        </div>
+        <div class="product">
+
+            <div class="image-box">
+                <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=500&q=80">
+                <button class="plus">+</button>
+            </div>
+
+            <div class="deal">
+                <span>11% off</span>
+                Limited time deal
+            </div>
+
+            <div class="price">
+                ₹40,990<sup>00</sup>
+                <del>M.R.P. ₹46,000.00</del>
+            </div>
+
+            <p class="title">
+                Vu California 126cm (50 inches)
+                Glo Mini-LED Google...
+            </p>
+
+            <div class="rating">
+                4.1 <span>★★★★☆</span>
+                <a>(342)</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    </div>
+
+    </div>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <a href="#">About Amazon</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Amazon Science</a>
+            </div>
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <a href="#">Sell on Amazon</a>
+                <a href="#">Sell under Amazon Accelerator</a>
+                <a href="#">Protect and Build Your Brand</a>
+                <a href="#">Amazon Global Selling</a>
+                <a href="#">Supply to Amazon</a>
+                <a href="#">Become an Affiliate</a>
+                <a href="#">Fulfilment by Amazon</a>
+                <a href="#">Advertise Your Products</a>
+                <a href="#">Amazon Pay on Merchants</a>
+            </div>
+            <div class="footer-column">
+                <h3>Let Us Help You</h3>
+                <a href="#">Your Account</a>
+                <a href="#">Returns Centre</a>
+                <a href="#">Recalls and Product Safety Alerts</a>
+                <a href="#">100% Purchase Protection</a>
+                <a href="#">Amazon App Download</a>
+                <a href="#">Help</a>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="logo">
+                amazon
+            </div>
+            <div class="buttons">
+                <button>
+                    <i class="fa-solid fa-globe"></i>
+                    English
+                    <i class="fa-solid fa-sort"></i>
+                </button>
+                <button>
+                    IN India
+                </button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="bottom-box">
+                <h4>AbeBooks</h4>
+                <p>Books, art</p>
+                <p>& collectibles</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Web Services</h4>
+                <p>Scalable Cloud</p>
+                <p>Computing Services</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Audible</h4>
+                <p>Download</p>
+                <p>Audio Books</p>
+            </div>
+            <div class="bottom-box">
+                <h4>IMDb</h4>
+                <p>Movies, TV</p>
+                <p>& Celebrities</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Shopbop</h4>
+                <p>Designer</p>
+                <p>Fashion Brands</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Business</h4>
+                <p>Everything For</p>
+                <p>Your Business</p>
+            </div>
+            <div class="bottom-box">
+                <h4>Amazon Music</h4>
+                <p>Stream Millions of Songs</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

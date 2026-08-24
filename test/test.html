@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            font-family: "Figtree", sans-serif;
+            font-optical-sizing: auto;
+            box-sizing: border-box;
+        }
+
+        #mainCnt {
+            /* border: 3px solid blue; */
+            width: 100%;
+            height: 100vh;
+        }
+
+        #navCnt {
+            border: 2px solid black;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #navLogoCnt {
+            /* border: 3px solid green; */
+            width: 12%;
+            display: flex;
+            height: 60px;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        #navNaviCnt {
+            /* border: 3px solid blue; */
+            width: 37%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #navSearchCnt {
+            background-color: #f5f5f6;
+            /* border: 3px solid blue; */
+            width: 29%;
+            height: 38px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        #navSearchCnt input {
+            width: 50%;
+            height: 50%;
+            border: none;
+            outline: none;
+            background-color: #f1f1f1;
+            align-items: center;
+        }
+
+        #navProfileCnt {
+            /* border: 3px solid orange; */
+            width: 12%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #navProfileCnt div {
+            /* border: 2px solid black; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #navProfileCnt div p {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .imgstyle {
+            margin-top: 5px;
+            width: 60%;
+            height: 60px;
+        }
+
+        .naviStyle {
+            text-decoration: none;
+            color: black;
+            font-weight: 650;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .main-cnt {
+            /* border: 2px solid red; */
+            height: 100vh;
+        }
+
+        .flat-cnt {
+            /* border: 2px solid red; */
+            height: 20%;
+            margin-top: 4%;
+            margin-bottom: 4%;
+        }
+
+        .bag-cnt {
+            /* border: 2px solid red; */
+            height: 50%;
+            /* padding: 10px; */
+        }
+
+        .adds-cnt {
+            /* border: 2px solid blue; */
+            height: 45%;
+            display: flex;
+        }
+
+        .adds {
+            /* border: 2px solid green; */
+            height: 40vh;
+            width: 25%;
+        }
+        
+        @media (max-width: 700px) {
+            #navCnt {
+                display: flex;
+                width: 130%;
+            }
+
+            #navNaviCnt {
+                display: none;
+
+            }
+
+            .hideOnMobile {
+                display: none;
+            }
+
+            #navLogoCnt {
+                width: 20%;
+                height: 60px;
+                justify-content: flex-start;
+            }
+
+            #navLogoCnt img {
+                width: 70%;
+            }
+
+            #navSearchCnt {
+                width: 60%;
+                height: 40px;
+            }
+
+            #navProfileCnt {
+                width: 20%;
+            }
+
+            #navProfileCnt img {
+                width: 25px;
+                height: 25px;
+
+            }
+
+            #navProfileCnt p {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .main-cnt {
+                width: 125%;
+            }
+
+            .flat-cnt {
+                margin-bottom: -20%;
+            }
+
+            .bag-cnt {
+                width: 100%;
+                margin-bottom: -50%;
+            }
+
+            .adds-cnt {
+                margin-bottom: -50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="mainCnt">
+        <section id="navCnt">
+            <section id="navLogoCnt">
+                <img class="imgstyle"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6D-0Vf_FbocknjVny3Gorek6RZH27F53ffPJCKdKTkw&s=10"
+                    alt="Myntra" />
+            </section>
+            <nav id="navNaviCnt">
+                <a class="naviStyle" href="#">MEN</a>
+                <a class="naviStyle" href="#">WOMEN</a>
+                <a class="naviStyle" href="#">KIDS</a>
+                <a class="naviStyle" href="#">HOME</a>
+                <a class="naviStyle hideOnTab" href="#">BEAUTY</a>
+                <a class="naviStyle hideOnTab" href="#">GENZ</a>
+                <a class="naviStyle hideOnTab" href="#">STUDIO</a>
+            </nav>
+            <section id="navSearchCnt">
+                <img src="../search.svg " alt="Search" />
+                <input placeholder="Search for products,brands and more" />
+            </section>
+            <section id="navProfileCnt">
+                <div class="hideOnMobile">
+                    <img src="../profile.com.svg" alt="Profile" />
+                    <p>Profile</p>
+                </div>
+                <div class="hideOnMobile">
+                    <img src="../heart.svg" alt="Wishlist" />
+                    <p>Wishlist</p>
+                </div>
+                <div>
+                    <img src="../local_mall_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Bag" />
+                    <p>Bag</p>
+            </section>
+        </section>
+        <div class="main-cnt">
+            <div class="flat-cnt">
+                <img width="100%"
+                    src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2026/AUGUST/11/7mWixAPC_9bb66e4a655d4be390aa5bc30f763729.jpg">
+            </div>
+            <div class="bag-cnt">
+                <img width="100%"
+                    src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2025/AUGUST/25/0pfZkpSF_60a17fdbda0a4622b8bd1f79585836c0.png">
+            </div>
+            <div class="flat-cnt">
+                <img width="100%"
+                    src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/20/G3nDKp8I_ceb585ae8826431d9a98ed1d7bda9eec.gif">
+            </div>
+            <div>
+                <h1 style="padding-left: 6%;">Shop By Category</h1>
+            </div>
+            <div class="adds-cnt">
+                <div class="adds">
+                    <img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/vDzdVpAN_c68dace27f9947bebc9aec1924fdb316.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/oFgyKUkR_4032eec0f23b4f4abd82038a84541509.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/PkD6fU4Q_a71f44a561414894b9ba82feb4df3813.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/JhNKQ41j_24d47e2ee4844ac7a04ca6065891815f.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/i2Caa24E_d84b143c49d44d1785288617439aa312.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/XBZz9dvs_f7e0ef9f08b24004b8ce629af1952703.jpg">
+                </div>
+            </div>
+            <div class="adds-cnt">
+                <div class="adds">
+                    <img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/SFGm7gjo_2558c9a006e248778aa6b892a02e00aa.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/SgwsQyP3_6a3abdfe1aa54029927b695ca925ce1d.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/rsmxDd57_c60c0a02302b443a8599e4b565e3f542.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/pOUFx7Yk_1f1aade0f33d4d7baf622a9eb3502cb5.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/odZyE2Ii_2647e782ba98465cb6c8aa6f5dd77d26.jpg">
+                </div>
+                <div class="adds"><img width="100%"
+                        src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2026/JUNE/14/VKzVQu3A_0ed90bfb4f3740afbcc61aa8a7109445.jpg">
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
